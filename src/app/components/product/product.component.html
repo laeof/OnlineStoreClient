@@ -1,0 +1,9 @@
+<h2>{{product.name}}</h2>
+<h2>{{product.description}}</h2>
+<h2>{{product.price}}</h2>
+<h2>{{product.amount}}</h2>
+<h2>{{product.id}}</h2>
+<h2>{{product.created}}</h2>
+<div *ngFor="let img of product.images; let i = index">
+    <img src="https://localhost:5000/img/goods/{{img.fileName}}">
+</div>
