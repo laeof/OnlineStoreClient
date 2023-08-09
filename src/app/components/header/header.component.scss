@@ -1,0 +1,38 @@
+@import './components/main.scss';
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 15px;
+    border-bottom: 5px solid #000;
+}
+
+header .nav{
+    width: 55%;
+}
+
+@media screen and (max-width: 1366px){
+    header .nav{
+        width: 75%;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    header .nav{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    header {
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    header .wrap-logo {
+        padding-right: 0;
+        justify-content: center;
+        width: auto;
+    }
+}

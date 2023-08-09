@@ -1,0 +1,18 @@
+.menu{
+    align-items: center;
+    cursor: pointer;
+    display: none;
+}
+
+.menu .icon{
+    margin-right: 0;
+    margin-left: 5px;
+    min-height: 40px;
+    min-width: 40px;
+}
+
+@media screen and (max-width: 768px) {
+    .menu{
+        display: flex;
+    }
+}

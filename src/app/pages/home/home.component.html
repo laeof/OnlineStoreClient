@@ -1,0 +1,24 @@
+<div class="wrapper">
+    <app-header>
+
+    </app-header>
+
+    <app-banners>
+
+    </app-banners>
+
+    <section class="section goods-section">
+        <h2 class="title">Новинки</h2>
+        <nav class="nav">
+            <ul class="goods">
+                <app-products *ngFor="let product of products; let i = index" [product]="product">
+
+                </app-products>
+            </ul>
+        </nav>
+    </section>
+
+    <app-footer>
+
+    </app-footer>
+</div>

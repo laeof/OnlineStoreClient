@@ -1,0 +1,92 @@
+﻿.slider-container {
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.dots {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #bbb;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #333;
+}
+
+.prev-btn,
+.next-btn {
+    background-color: transparent;
+    color: #333;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    user-select: none;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.thumbnails {
+    display: flex;
+    gap: 5px;
+}
+
+.thumbnails .thumb {
+    width: 60px;
+    height: auto;
+    border: 2px solid #bbb;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+
+.thumbnails .thumb.active {
+    border-color: #333;
+    filter: brightness(0.6);
+}
+
+@media screen and (max-width: 1366px) {
+
+    .slider-nav {
+        margin-right: 0;
+        height: auto;
+    }
+
+    .thumbnails {
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: #bbb;
+        cursor: pointer;
+    }
+}

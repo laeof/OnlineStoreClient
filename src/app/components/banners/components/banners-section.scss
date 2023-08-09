@@ -1,0 +1,29 @@
+.banners-section {
+    user-select: none;
+}
+
+.section.banners-section {
+    padding-top: 15px;
+}
+
+.banners-section .title {
+    margin-bottom: 15px;
+}
+
+.banners-section .nav .banner-img {
+    height: 100%;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+    .banners-section .nav {
+        width: 95%;
+    }
+
+    .banners-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

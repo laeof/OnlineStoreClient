@@ -1,0 +1,18 @@
+.goods-section .goods{
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1366px){
+    .goods-section .goods{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .goods-section .goods{
+        width: 90%;
+    }
+}

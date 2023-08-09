@@ -1,0 +1,89 @@
+.sidebar {
+    background: #000;
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    visibility: visible;
+    z-index: 99;
+    transform: translateX(0);
+    transition: visibility 0.1s, transform 0.3s;
+}
+
+.sidebar.notactive{
+    visibility: hidden;
+    transform: translateX(-100%);
+}
+
+.sidebar .nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar ul {
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar .nav .personal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar ul:not(:first-child) li{
+    cursor: pointer;
+}
+
+.sidebar ul li {
+    width: 90%;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.sidebar ul:not(:first-child) li:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+.sidebar .list .item {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+.sidebar .nav .wrap-logo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.sidebar .nav .wrap-logo .icon {
+    width: 40px;
+    height: 40px;
+}
+
+.sidebar .nav .wrap-logo .icon:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .nav .personal .logo {
+    margin-right: 10px;
+    height: 40px;
+    width: 40px;
+}
+
+.sidebar .nav .wrap-logo .logo:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .nav .personal .name {
+    color: #fff;
+}
+
+.sidebar .nav .list .item {
+    color: #fff;
+}

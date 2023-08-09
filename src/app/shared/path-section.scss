@@ -1,0 +1,26 @@
+.path-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.path-section .path{
+    width: 69.5%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+@media screen and (max-width: 1366px){
+    .path-section .path{
+        width: 89.5%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .path-section .path {
+        font-size: 14px;
+        font-weight: 400;
+    }
+}

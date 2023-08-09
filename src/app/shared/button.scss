@@ -1,0 +1,69 @@
+.button{
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 18px;
+    color: #000000;
+    background: transparent;
+    border: 1px;
+    width: 80px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.button.gray:hover{
+    background: rgb(145, 145, 145);
+    transition: background-color 0.3s;
+}
+
+.button.gray{
+    background: rgb(180, 180, 180);
+    transition: background-color 0.3s;
+    color: #fff;
+}
+
+.button.white {
+    background: rgb(255,255,255);
+    transition: background-color 0.3s;
+    color: #000000;
+}
+
+.button.white:hover {
+    background: rgb(226, 226, 226);
+}
+
+.button.grayblack {
+    background: rgb(51,51,51);
+    transition: background-color 0.3s;
+    color: #fff;
+}
+
+.button.grayblack:hover {
+    background: rgb(92, 92, 92);
+}
+
+.button.red {
+    background: rgb(182, 46, 12);
+    transition: background-color 0.3s;
+    color: #fff;
+}
+
+.button.red:hover {
+    background: rgb(146, 37, 9);
+}
+
+.button.green {
+    background: rgb(11, 139, 65);
+    transition: background-color 0.3s;
+    color: #fff;
+}
+
+.button.green:hover {
+    background: rgb(9, 112, 52);
+}
+
+.button.transparent {
+    background: transparent;
+    border: 0;
+    width: 25px;
+    height: 25px;
+}

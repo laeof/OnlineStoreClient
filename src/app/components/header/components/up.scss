@@ -1,0 +1,35 @@
+header .up{
+    display: flex;
+    align-items: center;
+    background: #000000;
+    justify-content: space-around;
+    height: 70px;
+}
+
+header .up .nav {
+    width: 60%;
+}
+
+@media screen and (max-width: 1600px){
+    header .up .nav {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    header .up .nav {
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    header .up .nav {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    header .up .nav {
+        width: 100%;
+    }
+}

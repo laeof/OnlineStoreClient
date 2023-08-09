@@ -1,0 +1,26 @@
+.wrap-logo{
+    height: 60px;
+    width: 80px;
+    cursor: pointer;
+    margin-top: 7px;
+}
+
+.wrap-logo .logo{
+    height: 55px;
+    width: 70px;
+}
+
+@media screen and (max-width: 768px){
+    .wrap-logo{
+        display: flex;
+        align-items: center;
+        min-height: 50px;
+        min-width: 60px;
+        margin-right: 10px;
+    }
+    
+    .wrap-logo .logo{
+        height: 45px;
+        width: 60px;
+    }
+}

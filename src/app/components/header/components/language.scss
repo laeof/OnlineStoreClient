@@ -1,0 +1,29 @@
+.language {
+    display: flex;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.language .item:not(:last-child){
+    margin-right: 5px;
+}
+
+.language .item {
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.language .item:not(:nth-child(2)):hover{
+    font-weight: 400;
+}
+
+.language .item:nth-child(2) {
+    cursor: default;
+}
+
+@media screen and (max-width: 768px) {
+    .language {
+        display: none;
+        margin: 0;
+    }
+}

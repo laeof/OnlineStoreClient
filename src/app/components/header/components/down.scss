@@ -1,0 +1,118 @@
+header .down {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+header .down .button.gray {
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-radius: 8px;
+    position: relative;
+}
+
+header .down .button.white{
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    border-radius: 8px;
+    position: relative;
+}
+
+header .down .button.gray:hover {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    font-weight: 500;
+    z-index: 2;
+}
+
+header .down .button.white:hover {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    font-weight: 500;
+    z-index: 2;
+}
+
+header .down .nav .list {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+header .down .nav .list .item {
+    cursor: pointer;
+    position: relative;
+    background: #fff;
+}
+
+header .down .nav .list .item:not(:last-child) {
+    margin-right: 10px;
+}
+
+header .down .nav .list .item .drop-list {
+    flex-direction: column;
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    transform: translateY(-40%);
+    transition: transform 0.3s;
+    height: 0;
+    z-index: 1;
+}
+
+header .down .nav .list .item .drop-list .drop-item {
+    padding: 5px;
+    text-align: center;
+    background: rgb(197, 197, 197);
+}
+
+header .down .nav .list .item:hover .drop-list {
+    height: auto;
+    visibility: visible;
+    transform: translate(0);
+    flex-direction: column;
+}
+
+header .down .nav .list .item .drop-list .drop-item:first-child {
+    margin-top: 10px;
+}
+
+header .down .nav .list .item .drop-list .drop-item:hover {
+    background: rgb(179, 179, 179);
+    color: #fff;
+    width: 100%;
+}
+
+@media screen and (max-width: 1366px) {
+    header .down .nav .list {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    header .down .nav .list {
+        width: 90%;
+    }
+
+    header .down .nav .list .item:not(:last-child) {
+        margin-right: 5px;
+    }
+    header .down .button.gray {
+        padding-right: 15px;
+        padding-left: 15px;
+        font-size: 16px;
+    }
+    header .down .button.white {
+        padding-right: 15px;
+        padding-left: 15px;
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header .down {
+        display: none;
+    }
+}
