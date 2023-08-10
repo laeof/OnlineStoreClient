@@ -1,0 +1,48 @@
+<div id="myModal" class="loginreg">
+  <div class="loginreg-content" id="modal-content">
+    <span class="close" (click)="modalService.close()">&times;</span>
+    <form id="loginForm" class="login form login-form" [ngClass]="{'show': showLoginForm}">
+      <h2 class="title">Вхід</h2>
+      <div class="alternate">
+        <button class="button white"><img class="icon" src="https:localhost:5000/img/png/google.png">Google</button>
+        <button class="button white"><img class="icon" src="https:localhost:5000/img/png/google.png">Google</button>
+      </div>
+
+      <label for="Email">Електронна пошта</label>
+      <input type="text" name="Email">
+
+      <label for="password">Пароль</label>
+      <input type="password" name="password">
+
+      <button class="button grayblack" type="submit">Увійти</button>
+      <p>Не зареєстровані? <a href="#" (click)="toggleForm()">Зареєструватися</a></p>
+    </form>
+    <form id="registerForm" class="login form register-form" [ngClass]="{'show': showRegisterForm}">
+      <h2 class="title">Реєстрація</h2>
+      <div class="alternate">
+        <button class="button white"><img class="icon" src="https:localhost:5000/img/png/google.png">Google</button>
+        <button class="button white"><img class="icon" src="https:localhost:5000/img/png/google.png">Google</button>
+      </div>
+
+      <label for="Name">Ім'я</label>
+      <span asp-validation-for="Name" class="validation"></span>
+      <input type="text" name="Name" asp-for="Name">
+
+      <label for="Lastname">Прізвище</label>
+      <input type="text" name="Lastname" asp-for="Lastname">
+
+      <label for="PhoneNumber">Номер телефону</label>
+      <input type="text" name="PhoneNumber" mask="(000) 000-00-00" [(ngModel)]="phoneNumber" placeholder="(999)-999-99-99"/>
+
+
+      <label for="Email">Електронна пошта</label>
+      <input type="text" name="Email">
+
+      <label for="password">Пароль</label>
+      <input type="Password" name="Password" asp-for="Password">
+
+      <button class="button grayblack" type="submit">Зареєструватися</button>
+      <p>Вже є акаунт? <a href="#" (click)="toggleForm()">Увійти</a></p>
+    </form>
+  </div>
+</div>

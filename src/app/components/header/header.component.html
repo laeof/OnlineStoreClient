@@ -3,7 +3,7 @@
     <div class="up">
         <nav class="nav">
             <ul class="menu">
-                <img class="icon" src="https://localhost:5000/img/svg/burgerbtn.svg" onclick="toggleSideBar()">
+                <img class="icon" src="https://localhost:5000/img/svg/burgerbtn.svg" id="togglebtn">
             </ul>
             <ul class="wrap-logo" (click)="redirectToHome()">
                 <img class="logo" src="https://localhost:5000/img/png/logo.png" >
@@ -19,7 +19,7 @@
                 <li class="item">UA</li>
             </ul>
             <ul class="personal-icons">
-                <li class="item">
+                <li class="item" (click)="modalService.open()">
                     <img class="icon" id="openModalBtn" src="https://localhost:5000/img/svg/personal.svg">
                 </li>
                 <li class="item">

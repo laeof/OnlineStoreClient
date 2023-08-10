@@ -1,12 +1,15 @@
 ﻿.slider-container {
     overflow: hidden;
     position: relative;
+    display: flex;
+    align-items: center;
     border-radius: 12px;
 }
 
 .slides {
     display: flex;
     transition: transform 0.5s ease;
+    align-items: center;
 }
 
 .dots {
@@ -31,16 +34,27 @@
 
 .prev-btn,
 .next-btn {
-    background-color: transparent;
+    background-color: rgba(224, 224, 224, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: #333;
     border: none;
+    width: 40px;
+    height: 40px;
     font-size: 32px;
     cursor: pointer;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     z-index: 1;
     user-select: none;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+    background-color: rgba(224, 224, 224, 0.9);
 }
 
 .prev-btn {
@@ -88,5 +102,13 @@
         border-radius: 50%;
         background-color: #bbb;
         cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .prev-btn,
+    .next-btn {
+        display: none;
     }
 }

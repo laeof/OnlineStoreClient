@@ -1,0 +1,137 @@
+.loginreg {
+    display: flex;
+    position: fixed;
+    z-index: 95;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.loginreg-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    padding-top: 40px;
+    width: 500px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.loginreg .title {
+    margin-bottom: 0;
+}
+
+.loginreg .alternate {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    margin-top: 25px;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    right: 30px;
+    position: absolute;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#openModalBtn {
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+
+.loginreg input,
+.loginreg button {
+    padding: 18px;
+    border-radius: 10px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-family: 'Roboto';
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+}
+
+.loginreg input {
+    padding: 15px;
+    border: 1px solid #aaa;
+    background: #f7f7f7;
+    outline-color: rgb(29, 75, 228);
+}
+
+.loginreg label {
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-family: 'Roboto';
+    font-size: 14px;
+}
+
+.loginreg p {
+    align-self: center;
+    margin-top: auto;
+    font-size: 16px;
+}
+
+.loginreg p a {
+    text-decoration: underline;
+}
+
+.loginreg p a:hover {
+    color: rgb(29, 75, 228)
+}
+
+.loginreg .button.white {
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    font-size: 20px;
+    width: 160px;
+}
+
+.loginreg .button.white .icon {
+    height: 35px;
+    width: 35px;
+    margin-right: 10px;
+}
+
+.loginreg .button.grayblack {
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+.form {
+    display: none;
+}
+
+.form.show {
+    display: flex;
+}

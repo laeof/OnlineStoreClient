@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from './models/products';
-import { products as data } from './data/products'
-import { ProductPage } from './pages/product/product.component';
-import { HomePage } from './pages/home/home.component';
 import { ProductsService } from './services/products/products.service';
-import { Routes } from '@angular/router';
+import { SidebarService, IElements } from './services/sidebar/sidebar.service';
 
 @Component({
   selector: 'app-root',
@@ -13,16 +10,24 @@ import { Routes } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   title = 'ang app';
+  products: IProduct[] = [];
+  elements: IElements;
 
-  products: IProduct[] = []
-
-  constructor(private productsService: ProductsService) {
-
-  }
+  constructor(private productsService: ProductsService, private sidebarService: SidebarService) { }
 
   ngOnInit(): void {
     this.productsService.getAll().subscribe(products => {
-      this.products = products
-    })
+      this.products = products;
+    });
+
+    this.sidebarService.elements$.subscribe(elements => {
+      this.elements = elements;
+    });
+
+    this.sidebarService.setElements();
+  }
+
+  toggleSidebar() {
+    this.sidebarService.toggleSidebar();
   }
 }

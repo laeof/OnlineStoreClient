@@ -1,0 +1,29 @@
+.blog-section .blog .title{
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+.blog-section .blog{
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    justify-content: space-around;
+}
+
+@media screen and (max-width: 1600px){
+    .blog-section .blog{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 1366px){
+    .blog-section .blog{
+        width: 87%;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .blog-section .blog{
+        width: 100%;
+    }
+}
