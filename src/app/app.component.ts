@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { IProduct } from './models/products';
 import { ProductsService } from './services/products/products.service';
 import { SidebarService, IElements } from './services/sidebar/sidebar.service';
+import { ModalService } from './services/modal/modal.service';
+import { SliderService } from './services/slider/slider.service';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +11,13 @@ import { SidebarService, IElements } from './services/sidebar/sidebar.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+
+
   title = 'ang app';
   products: IProduct[] = [];
   elements: IElements;
 
-  constructor(private productsService: ProductsService, private sidebarService: SidebarService) { }
+  constructor(private productsService: ProductsService, private sidebarService: SidebarService, public modalService: ModalService) { }
 
   ngOnInit(): void {
     this.productsService.getAll().subscribe(products => {
@@ -30,4 +34,5 @@ export class AppComponent implements OnInit {
   toggleSidebar() {
     this.sidebarService.toggleSidebar();
   }
+
 }

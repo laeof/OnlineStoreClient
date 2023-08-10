@@ -16,11 +16,10 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { LoginComponent } from './components/modal/login/login.component';
 import { IConfig, NgxMaskDirective, NgxMaskPipe, provideEnvironmentNgxMask } from 'ngx-mask';
 import { FormsModule } from '@angular/forms';
-
-const routes: Routes = [
-  { path: '', component: HomePage },
-  { path: 'Product/:id', component: ProductPage },
-];
+import { GoodComponent } from './components/good/good.component';
+import { PathComponent } from './components/path/path.component';
+import { RateComponent } from './components/rate/rate.component';
+import { SliderComponent } from './components/slider/slider.component';
 
 const maskConfigFunction: () => Partial<IConfig> = () => {
   return {
@@ -39,15 +38,18 @@ const maskConfigFunction: () => Partial<IConfig> = () => {
     BlogComponent,
     SidebarComponent,
     LoginComponent,
+    GoodComponent,
     HomePage,
     ProductPage,
+    SliderComponent,
+    PathComponent,
+    RateComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(routes), 
     NgxMaskDirective, 
     NgxMaskPipe
   ],

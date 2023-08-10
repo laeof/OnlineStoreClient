@@ -12,8 +12,7 @@ import { ProductsService } from 'src/app/services/products/products.service'
 export class HomePage {
     products: IProduct[] = []
 
-    constructor(private productsService: ProductsService,
-                public modalService: ModalService) {
+    constructor(private productsService: ProductsService) {
         
     }
 

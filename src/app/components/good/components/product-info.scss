@@ -1,0 +1,224 @@
+.product-info {
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.product-info .description {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-info .description .info {
+    margin-left: 150px;
+}
+
+.product-info .pictures {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.product-info .product-buy {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-info .description .product-img {
+    width: 500px;
+    height: 415px;
+    margin-bottom: 30px;
+}
+
+.product-buy .buy {
+    margin-bottom: 15px;
+    width: 70%;
+    margin-right: 15%;
+}
+
+.product-buy .buy .available {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.product-buy .buy .cost .good-buy #like-heart:hover {
+    fill: rgb(250, 235, 20);
+    cursor: pointer;
+}
+
+.product-buy .buy .available .icon {
+    margin-right: 7px;
+}
+
+.product-buy .button.gray .icon {
+    margin-right: 15px;
+}
+
+.product-buy .buy .cost {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+}
+
+.product-buy .buy .cost .good-cost {
+    font-weight: 500;
+    font-size: 35px;
+}
+
+.product-buy .buy .cost .good-buy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-buy .buy .cost .good-buy .button.gray {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 15px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-radius: 10px;
+}
+
+.product-buy .delivery {
+    background-color: rgb(236, 236, 236);
+    margin-bottom: 10px;
+    width: 70%;
+    margin-right: 15%;
+}
+
+.product-buy .delivery .delivery-to {
+    display: flex;
+    font-weight: 400;
+    font-size: 25px;
+    border-bottom: 2px solid #b8b8b8;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.product-buy .delivery .delivery-to .subtitle {
+    margin-right: 5px;
+}
+
+.product-buy .delivery .delivery-to .blue-subtitle {
+    color: rgb(18, 47, 212);
+}
+
+.product-buy .buy-info {
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: rgb(236, 236, 236);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+    margin-right: 15%;
+}
+
+.product-buy .delivery .buy-info {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.product-buy .buy-info-what {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    font-weight: 400;
+}
+
+.product-buy .buy-info .text {
+    text-align: right;
+}
+
+.product-buy .buy-info .buy-info-what .text {
+    text-align: left;
+}
+
+.product-buy .buy-info .icon {
+    margin-right: 10px;
+}
+
+@media screen and (max-width: 1366px) {
+    .product-info .description .product-img {
+        width: 400px;
+        height: 333px;
+    }
+
+    .product-info .description .info {
+        margin-left: 0px;
+    }
+
+    .product-info .delivery {
+        margin-right: 0;
+        width: 95%;
+    }
+
+    .product-buy .buy {
+        margin-right: 0;
+        width: 95%;
+    }
+
+    .product-info .buy-info {
+        margin-right: 0;
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .product-info .description .product-img {
+        width: 400px;
+        height: 333px;
+    }
+
+    .product-info .description .info .property {
+        font-size: 16px;
+    }
+
+    .product-buy .text {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .product-info {
+        flex-direction: column;
+    }
+
+    .product-info .product-buy {
+        width: 100%;
+    }
+
+    .product-info .product-buy .buy {
+        width: 100%;
+    }
+
+    .product-info .product-buy .delivery {
+        width: 100%;
+    }
+
+    .product-info .product-buy .buy-info {
+        width: 100%;
+    }
+
+    .product-info .description {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+}

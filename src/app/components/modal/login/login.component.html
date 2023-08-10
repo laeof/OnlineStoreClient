@@ -15,7 +15,7 @@
       <input type="password" name="password">
 
       <button class="button grayblack" type="submit">Увійти</button>
-      <p>Не зареєстровані? <a href="#" (click)="toggleForm()">Зареєструватися</a></p>
+      <p>Не зареєстровані? <a (click)="toggleForm()">Зареєструватися</a></p>
     </form>
     <form id="registerForm" class="login form register-form" [ngClass]="{'show': showRegisterForm}">
       <h2 class="title">Реєстрація</h2>
@@ -42,7 +42,7 @@
       <input type="Password" name="Password" asp-for="Password">
 
       <button class="button grayblack" type="submit">Зареєструватися</button>
-      <p>Вже є акаунт? <a href="#" (click)="toggleForm()">Увійти</a></p>
+      <p>Вже є акаунт? <a (click)="toggleForm()">Увійти</a></p>
     </form>
   </div>
 </div>

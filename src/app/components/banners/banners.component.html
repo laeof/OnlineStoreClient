@@ -1,16 +1,12 @@
 <section class="section banners-section">
     <h2 class="title">Акції</h2>
     <nav class="nav">
-        <ul class="slider-container">
-            <li class="prev-btn" style="transform: rotate(-180deg);" (click)="prevSlide()" ><img class="icon" src="https://localhost:5000/img/svg/next.svg"></li>
-            <li class="slides">
-                <img class="banner-img" src="https://localhost:5000/img/jpg/ban1.jpg">
-                <img class="banner-img" src="https://localhost:5000/img/jpg/ban2.jpg">
-                <img class="banner-img" src="https://localhost:5000/img/jpg/ban3.jpg">
-                <img class="banner-img" src="https://localhost:5000/img/jpg/ban4.jpg">
-            </li>
-            <li class="next-btn" (click)="nextSlide()"><img class="icon" src="https://localhost:5000/img/svg/next.svg"></li>
-        </ul>
+        <app-slider>
+            <img class="banner-img" src="https://localhost:5000/img/jpg/ban1.jpg">
+            <img class="banner-img" src="https://localhost:5000/img/jpg/ban2.jpg">
+            <img class="banner-img" src="https://localhost:5000/img/jpg/ban3.jpg">
+            <img class="banner-img" src="https://localhost:5000/img/jpg/ban4.jpg">
+        </app-slider>
         <ul class="dots">
             <li class="dot"></li>
             <li class="dot"></li>

@@ -1,0 +1,105 @@
+.additional-section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.additional-section .additional {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.additional-section .additional .title {
+    font-size: 24px;
+}
+
+.additional-section .additional .another-product {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.additional-section .another-product .nav {
+    display: flex;
+    justify-content: center;
+    width: 65%;
+}
+
+.additional-section .another-product .nav .goods {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.additional-section .good-card {
+    width: 170px;
+    padding: 8px;
+}
+
+.additional-section .good-card .up .good-name {
+    font-size: 16px;
+    margin-right: 0;
+}
+
+.additional-section .good-card .up .good-category {
+    font-size: 14px;
+}
+
+.additional-section .good-card .up .good-img,
+.additional-section .good-card .up .good-img2 {
+    height: 130px;
+    width: 155px;
+}
+
+.additional-section .good-card .up .good-cost {
+    font-size: 16px;
+}
+
+.additional-section .good-card .down {
+    width: 170px;
+    padding: 8px;
+    margin-left: -8px;
+    margin-top: 2px;
+}
+
+.additional-section .good-card .down .property {
+    font-size: 12px;
+}
+
+@media screen and (max-width: 1600px) {
+    .additional-section .another-product .nav {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .additional-section .another-product .nav {
+        width: 95%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .additional-section .another-product .nav {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .additional-section .additional {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .additional-section .additional .another-product {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .additional-section .additional .wrap-rate {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+}

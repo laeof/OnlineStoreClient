@@ -1,29 +1,29 @@
-﻿.banners-section .slider-container {
+﻿.nav {
     width: 55%;
+    border-radius: 12px;
     margin-bottom: 10px;
-    box-shadow: 0px 0px 70px rgba(0,0,0,0.2);
 }
 
 @media screen and (max-width: 1600px){
-    .banners-section .slider-container {
+    .banners-section  .nav {
         width: 65%;
     }
 }
 
 @media screen and (max-width: 1366px) {
-    .banners-section .slider-container {
+    .banners-section .nav {
         width: 75%;
     }
 }
 
 @media screen and (max-width: 1024px) {
-    .banners-section .slider-container {
+    .banners-section .nav {
         width: 85%;
     }
 }
 
-@media screen and (max-width: 1024px) {
-    .banners-section .slider-container {
+@media screen and (max-width: 768px) {
+    .banners-section .nav {
         width: 100%;
     }
 }
