@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth/auth.service';
 import { ModalService } from 'src/app/services/modal/modal.service';
 
 interface Elements {
@@ -17,7 +18,8 @@ interface Elements {
 
 export class HeaderComponent {
     constructor(private router: Router,
-                public modalService: ModalService) { }
+                public modalService: ModalService,
+                public authService: AuthService) { }
 
     redirectToHome(): void {
         this.router.navigate(['/']);

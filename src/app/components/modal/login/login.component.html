@@ -9,12 +9,12 @@
       </div>
 
       <label for="Email">Електронна пошта</label>
-      <input type="text" name="Email">
+      <input type="text" [(ngModel)]="email" name="Email">
 
       <label for="password">Пароль</label>
-      <input type="password" name="password">
+      <input type="password" [(ngModel)]="password" name="password">
 
-      <button class="button grayblack" type="submit">Увійти</button>
+      <button class="button grayblack" (click)="onLoginClick(email, password)" type="submit">Увійти</button>
       <p>Не зареєстровані? <a (click)="toggleForm()">Зареєструватися</a></p>
     </form>
     <form id="registerForm" class="login form register-form" [ngClass]="{'show': showRegisterForm}">

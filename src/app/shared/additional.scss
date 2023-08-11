@@ -8,6 +8,7 @@
     margin-top: 30px;
     display: flex;
     justify-content: center;
+    width: 90%;
 }
 
 .additional-section .additional .title {
@@ -21,10 +22,16 @@
     align-items: center;
 }
 
+.additional-section .additional .wrap-rate {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
 .additional-section .another-product .nav {
     display: flex;
     justify-content: center;
-    width: 65%;
+    width: 70%;
 }
 
 .additional-section .another-product .nav .goods {
@@ -72,6 +79,9 @@
 @media screen and (max-width: 1600px) {
     .additional-section .another-product .nav {
         width: 80%;
+    }
+    .additional-section .additional {
+        width: 95%;
     }
 }
 

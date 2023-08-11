@@ -54,6 +54,14 @@
     fill: #E2BD2B;
 }
 
+@media screen and (max-width: 1600px){
+    .rate {
+        width: 70%;
+        margin-right: 15%;
+    }
+    
+}
+
 @media screen and (max-width: 1366px) {
     .rate {
         margin-right: 0;

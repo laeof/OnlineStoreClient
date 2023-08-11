@@ -3,22 +3,19 @@ import { HttpClient, HttpHeaders } from "@angular/common/http"
 import { Observable } from "rxjs"
 import { IProduct } from "../../models/products"
 import { AuthService } from "../auth/auth.service";
+import { IUser } from "src/app/models/user";
 
 @Injectable({
     providedIn: 'root'
 })
 
-
-
-export class ProductsService {
+export class UserService {
+    user: IUser
     constructor(private http: HttpClient, private authService: AuthService) {
 
     }
 
-    getAll(): Observable<IProduct[]> {
-        return this.http.get<IProduct[]>('https://localhost:5000/api/goods/product')
-    }
-    getById(id: string): Observable<IProduct> {
-        return this.http.get<IProduct>('https://localhost:5000/api/goods/product/' + id)
+    getUser(): Observable<IUser> {
+        return this.http.get<IUser>('https://localhost:5000/api/account/currentuser')
     }
 }

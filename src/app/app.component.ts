@@ -4,6 +4,7 @@ import { ProductsService } from './services/products/products.service';
 import { SidebarService, IElements } from './services/sidebar/sidebar.service';
 import { ModalService } from './services/modal/modal.service';
 import { SliderService } from './services/slider/slider.service';
+import { AuthService } from './services/auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,11 @@ export class AppComponent implements OnInit {
   products: IProduct[] = [];
   elements: IElements;
 
-  constructor(private productsService: ProductsService, private sidebarService: SidebarService, public modalService: ModalService) { }
+  constructor(private productsService: ProductsService,
+    private sidebarService: SidebarService,
+    public modalService: ModalService,
+    private authService: AuthService) {
+  }
 
   ngOnInit(): void {
     this.productsService.getAll().subscribe(products => {

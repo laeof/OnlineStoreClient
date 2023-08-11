@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductPage } from './pages/product/product.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HomePage } from './pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BannersComponent } from './components/banners/banners.component';
@@ -20,6 +20,7 @@ import { GoodComponent } from './components/good/good.component';
 import { PathComponent } from './components/path/path.component';
 import { RateComponent } from './components/rate/rate.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { JWT_OPTIONS, JwtInterceptor, JwtModule } from '@auth0/angular-jwt';
 
 const maskConfigFunction: () => Partial<IConfig> = () => {
   return {
@@ -51,10 +52,17 @@ const maskConfigFunction: () => Partial<IConfig> = () => {
     HttpClientModule,
     FormsModule,
     NgxMaskDirective, 
-    NgxMaskPipe
+    NgxMaskPipe,
+    JwtModule.forRoot({})
   ],
   providers: [
     provideEnvironmentNgxMask(maskConfigFunction),
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    },
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS }
   ],
   bootstrap: [AppComponent],
   exports: [RouterModule]

@@ -3,7 +3,8 @@ import { SliderService } from 'src/app/services/slider/slider.service';
 
 @Component({
     selector: 'app-slider',
-    templateUrl: './slider.component.html'
+    templateUrl: './slider.component.html',
+    styleUrls: ['./slider.component.scss']
 })
 export class SliderComponent {
     @ViewChild('slidesContainer', { static: true }) slidesContainer!: ElementRef;
