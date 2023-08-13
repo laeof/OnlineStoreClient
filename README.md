@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.8.
 Api: https://github.com/laeof/Online-Store
 
-#View:
+# View:
 Main page:
 ![image](https://github.com/laeof/OnlineStoreClient/assets/66406936/048467f8-60ca-4144-8216-3f14f1b6f9be)
 
