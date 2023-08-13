@@ -1,0 +1,115 @@
+.cabinet-info{
+    width: 100%;
+    padding-left: 10px;
+}
+
+.cabinet-info .title{
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.cabinet-info .cabinet-info-nav .cabinet-info-list .cabinet-info-item .cabinet-info-title .info-title{
+    display: flex;
+}
+
+.cabinet-info .cabinet-info-nav .cabinet-info-list .cabinet-info-item .cabinet-info-title {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s;
+    border: 1px rgba(0,0,0,0.2) solid;
+    margin-top: 10px; 
+}
+
+.cabinet-info .cabinet-info-nav .cabinet-info-list .cabinet-info-item .cabinet-info-title:hover{
+    background-color: rgba(0,0,0,0.1);
+}
+
+.cabinet-info .cabinet-info-item-list{
+    padding: 20px;
+    display: none;
+    width: 100%;
+}
+
+.cabinet-info .arrow{
+    transform: rotate(90deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cabinet-info-title.active .arrow{
+    transform: rotate(270deg);
+}
+
+.cabinet-info .cabinet-info-item-list.active {
+    display: block;
+}
+
+.cabinet-info .cabinet-info-item-list ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cabinet-info .cabinet-info-item-list .cabinet-info-item-list-item{
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.cabinet-info .cabinet-info-item-list .cabinet-info-item-list-item .cabinet-info-input{
+    padding: 10px;
+    outline: none;
+    border: none;
+    width: 220px;
+    height: 50px;
+    font-size: 18px;
+    pointer-events: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+}
+
+.cabinet-info .buttons{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cabinet-info .button.white, .cabinet-info .button.red, .cabinet-info .button.green{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    width: 150px;
+    border-radius: 12px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.cabinet-info .button.white{
+    border: 1px solid rgba(0,0,0,0.1);
+}
+
+.cabinet-info .button.red, .cabinet-info .button.green{
+    display: none
+}
+
+.cabinet-info .cabinet-info-item-list.edit .button.white{
+    display: none;
+}
+
+.cabinet-info .cabinet-info-item-list.edit .button.red,
+.cabinet-info .cabinet-info-item-list.edit .button.green{
+    display: flex;
+}
+
+.cabinet-info .cabinet-info-item-list .cabinet-info-item-list-item .cabinet-info-input.active {
+    border: 2px solid rgba(0,0,0,0.1);
+    border-radius: 12px;
+    pointer-events: initial;
+}

@@ -9,14 +9,16 @@ import { UserService } from 'src/app/services/user/user.service'
 @Component({
     selector: 'app-cabinet',
     templateUrl: './cabinet.component.html',
+    styleUrls: ['./cabinet.component.scss']
 })
 
 export class CabinetPage {
-    
+    user: IUser;
     constructor(private userService: UserService) {
         userService.getUser().subscribe({
-            next: (user: IUser) => {
-                console.log(user);
+            next: (user: any) => {
+                this.user = user;
+                console.log(user)
             },
             error: (error: any) => {
                 console.error('Ошибка при получении пользователя', error);
