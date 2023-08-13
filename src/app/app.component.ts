@@ -5,15 +5,18 @@ import { SidebarService, IElements } from './services/sidebar/sidebar.service';
 import { ModalService } from './services/modal/modal.service';
 import { SliderService } from './services/slider/slider.service';
 import { AuthService } from './services/auth/auth.service';
+import { UserService } from './services/user/user.service';
+import { Emitters } from './emmiters/emmiters';
+import { IUser } from './models/user';
+import { Observable, tap } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent implements OnInit {
-
-
   title = 'ang app';
   products: IProduct[] = [];
   elements: IElements;
@@ -21,9 +24,9 @@ export class AppComponent implements OnInit {
   constructor(private productsService: ProductsService,
     private sidebarService: SidebarService,
     public modalService: ModalService,
+    private userService: UserService,
     private authService: AuthService) {
   }
-
   ngOnInit(): void {
     this.productsService.getAll().subscribe(products => {
       this.products = products;

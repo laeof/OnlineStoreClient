@@ -3,13 +3,13 @@
     <div class="up">
         <nav class="nav">
             <ul class="menu">
-                <img class="icon" src="https://localhost:5000/img/svg/burgerbtn.svg" id="togglebtn">
+                <img class="icon" src="{{picUrl}}img/svg/burgerbtn.svg" id="togglebtn">
             </ul>
             <ul class="wrap-logo" (click)="redirectToHome()">
-                <img class="logo" src="https://localhost:5000/img/png/logo.png" >
+                <img class="logo" src="{{picUrl}}img/png/logo.png" >
             </ul>
             <ul class="wrap-search">
-                <img class="input-img" src="https://localhost:5000/img/svg/search.svg">
+                <img class="input-img" src="{{picUrl}}img/svg/search.svg">
                 <input class="input search" placeholder="Знайти щось">
                 <button class="button gray">Знайти</button>
             </ul>
@@ -19,20 +19,20 @@
                 <li class="item">UA</li>
             </ul>
             <ul class="personal-icons">
-                <li class="item" *ngIf="authService.isAuthenticated$ | async">
-                    <img class="icon" src="https://localhost:5000/img/svg/personal.svg">
+                <li class="item" *ngIf="authService.isAuthenticated$ | async" (click)="redirectToCabinet()">
+                    <img class="icon" src="{{picUrl}}img/svg/personal.svg">
                 </li>
                 <li class="item" (click)="modalService.open()" *ngIf="!(authService.isAuthenticated$ | async)">
-                    <img class="icon" src="https://localhost:5000/img/svg/personal.svg">
+                    <img class="icon" src="{{picUrl}}img/svg/personal.svg">
                 </li>
                 <li class="item">
-                    <img class="icon" src="https://localhost:5000/img/svg/basket.svg">
+                    <img class="icon" src="{{picUrl}}img/svg/basket.svg" (click)="redirectToCart()">
                 </li>
-                <li class="item" *ngIf="authService.isAuthenticated$ | async">
-                    <img class="icon" src="https://localhost:5000/img/svg/admin.svg">
+                <li class="item" *ngIf="authService.isAuthenticated$ | async" (click)="redirectToAdmin()">
+                    <img class="icon" src="{{picUrl}}img/svg/admin.svg">
                 </li>
-                <li class="item" *ngIf="authService.isAuthenticated$ | async">
-                    <img class="icon" src="https://localhost:5000/img/svg/exit.svg">
+                <li class="item" *ngIf="authService.isAuthenticated$ | async" (click)="authService.logout().subscribe();">
+                    <img class="icon" src="{{picUrl}}img/svg/exit.svg">
                 </li>
             </ul>
         </nav>

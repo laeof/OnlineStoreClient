@@ -21,6 +21,9 @@ import { PathComponent } from './components/path/path.component';
 import { RateComponent } from './components/rate/rate.component';
 import { SliderComponent } from './components/slider/slider.component';
 import { JWT_OPTIONS, JwtInterceptor, JwtModule } from '@auth0/angular-jwt';
+import { CartPage } from './pages/cart/cart.component';
+import { CabinetPage } from './pages/cabinet/cabinet.component';
+import { CookieService } from 'ngx-cookie-service';
 
 const maskConfigFunction: () => Partial<IConfig> = () => {
   return {
@@ -40,8 +43,10 @@ const maskConfigFunction: () => Partial<IConfig> = () => {
     SidebarComponent,
     LoginComponent,
     GoodComponent,
+    CartPage,
     HomePage,
     ProductPage,
+    CabinetPage,
     SliderComponent,
     PathComponent,
     RateComponent,
@@ -62,7 +67,8 @@ const maskConfigFunction: () => Partial<IConfig> = () => {
       useClass: JwtInterceptor,
       multi: true
     },
-    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS }
+    { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
+    CookieService
   ],
   bootstrap: [AppComponent],
   exports: [RouterModule]

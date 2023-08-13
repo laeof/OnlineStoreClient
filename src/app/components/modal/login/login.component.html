@@ -4,24 +4,24 @@
     <form id="loginForm" class="login form login-form" [ngClass]="{'show': showLoginForm}">
       <h2 class="title">Вхід</h2>
       <div class="alternate">
-        <button class="button white"><img class="icon" src="https:localhost:5000/img/png/google.png">Google</button>
-        <button class="button white"><img class="icon" src="https:localhost:5000/img/png/google.png">Google</button>
+        <button class="button white"><img class="icon" src="{{picUrl}}img/png/google.png">Google</button>
+        <button class="button white"><img class="icon" src="{{picUrl}}img/png/google.png">Google</button>
       </div>
 
       <label for="Email">Електронна пошта</label>
-      <input type="text" [(ngModel)]="email" name="Email">
+      <input type="text" [(ngModel)]="loginData.email" name="Email">
 
       <label for="password">Пароль</label>
-      <input type="password" [(ngModel)]="password" name="password">
+      <input type="password" [(ngModel)]="loginData.password" name="password">
 
-      <button class="button grayblack" (click)="onLoginClick(email, password)" type="submit">Увійти</button>
+      <button class="button grayblack" (click)="onLoginClick(loginData)" type="submit">Увійти</button>
       <p>Не зареєстровані? <a (click)="toggleForm()">Зареєструватися</a></p>
     </form>
     <form id="registerForm" class="login form register-form" [ngClass]="{'show': showRegisterForm}">
       <h2 class="title">Реєстрація</h2>
       <div class="alternate">
-        <button class="button white"><img class="icon" src="https:localhost:5000/img/png/google.png">Google</button>
-        <button class="button white"><img class="icon" src="https:localhost:5000/img/png/google.png">Google</button>
+        <button class="button white"><img class="icon" src="{{picUrl}}img/png/google.png">Google</button>
+        <button class="button white"><img class="icon" src="{{picUrl}}img/png/google.png">Google</button>
       </div>
 
       <label for="Name">Ім'я</label>

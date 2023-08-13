@@ -12,6 +12,7 @@ import { ProductsService } from 'src/app/services/products/products.service'
 export class ProductPage {
     product: IProduct;
     products: IProduct[] = []
+
     constructor(private productsService: ProductsService, private route: ActivatedRoute) { }
 
     ngOnInit(): void {

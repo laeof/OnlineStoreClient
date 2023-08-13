@@ -6,21 +6,13 @@ import { ProductsService } from 'src/app/services/products/products.service'
 import { UserService } from 'src/app/services/user/user.service'
 
 @Component({
-    selector: 'app-home',
-    templateUrl: './home.component.html',
-    styleUrls: ['./home.component.scss']
+    selector: 'app-cart',
+    templateUrl: './cart.component.html',
 })
 
-export class HomePage {
-    products: IProduct[] = []
+export class CartPage {
     
-    constructor(private productsService: ProductsService, private userService: UserService) {
+    constructor() {
         
-    }
-
-    ngOnInit(): void {
-        this.productsService.getAll().subscribe(products => {
-            this.products = products
-        })
     }
 }

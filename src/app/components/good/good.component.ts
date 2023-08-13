@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core'
 import { Router } from '@angular/router';
 import { IProduct } from 'src/app/models/products';
+import { ApiService } from 'src/app/services/api/api.service';
 
 @Component({
     selector: 'app-good',
@@ -9,7 +10,10 @@ import { IProduct } from 'src/app/models/products';
 })
 
 export class GoodComponent {
-    constructor(private router: Router) { }
+    constructor(private router: Router,
+        public apiService: ApiService) {
+        this.picUrl = apiService.getApiUrl();
+    }
+    picUrl: string;
     @Input() product: IProduct
-    
 }

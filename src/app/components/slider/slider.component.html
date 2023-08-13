@@ -1,8 +1,8 @@
 <ul class="slider-container">
     <li class="prev-btn" style="transform: rotate(-180deg);" (click)="prevSlide()"><img class="icon"
-            src="https://localhost:5000/img/svg/next.svg"></li>
+            src="{{picUrl}}img/svg/next.svg"></li>
     <li class="slides">
         <ng-content></ng-content>
     </li>
-    <li class="next-btn" (click)="nextSlide()"><img class="icon" src="https://localhost:5000/img/svg/next.svg"></li>
+    <li class="next-btn" (click)="nextSlide()"><img class="icon" src="{{picUrl}}img/svg/next.svg"></li>
 </ul>

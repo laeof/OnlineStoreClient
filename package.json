@@ -19,6 +19,8 @@
     "@angular/platform-browser-dynamic": "^16.1.0",
     "@angular/router": "^16.1.0",
     "@auth0/angular-jwt": "^5.1.2",
+    "ngx-cookie": "^6.0.1",
+    "ngx-cookie-service": "^16.0.0",
     "ngx-mask": "^16.2.8",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

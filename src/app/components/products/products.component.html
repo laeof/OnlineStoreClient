@@ -1,7 +1,7 @@
 <li class="good-card" (click)="redirectToProduct(product.id)">
     <div class="up">
-        <img class="good-img" src="https://localhost:5000/img/goods/{{ product.images[0].fileName}}">
-        <img class="good-img2" src="https://localhost:5000/img/goods/{{ product.images[1].fileName}}">
+        <img class="good-img" src="{{picUrl}}img/goods/{{ product.images[0].fileName}}">
+        <img class="good-img2" src="{{picUrl}}img/goods/{{ product.images[1].fileName}}">
         <div class="top">
             <p class="good-name">{{product.name}}</p>
         </div>

@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { ApiService } from 'src/app/services/api/api.service';
 import { SliderService } from 'src/app/services/slider/slider.service';
 
 @Component({
@@ -6,11 +7,15 @@ import { SliderService } from 'src/app/services/slider/slider.service';
     templateUrl: './slider.component.html',
     styleUrls: ['./slider.component.scss']
 })
+
 export class SliderComponent {
     @ViewChild('slidesContainer', { static: true }) slidesContainer!: ElementRef;
-    constructor(public sliderService: SliderService) {
 
+    constructor(public sliderService: SliderService, public apiService: ApiService) {
+        this.picUrl = apiService.getApiUrl();
     }
+    picUrl: string;
+
     ngOnInit(): void {
         this.sliderService.showSlide(this.sliderService.getCurrentSlide());
         this.sliderService.updateActiveDot();

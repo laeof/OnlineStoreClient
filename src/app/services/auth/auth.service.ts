@@ -1,44 +1,55 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { BehaviorSubject, Observable, of } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
+import { ApiService } from '../api/api.service';
+import { ILogin } from 'src/app/models/login';
+import { CookieOptions, CookieService } from 'ngx-cookie-service';
+import { IUser } from 'src/app/models/user';
 
 interface LoginResponse {
-    token: string; // Добавьте другие свойства, если есть
+    token: string
 }
-
+const requestOptions = {
+    withCredentials: true // Включаем передачу куки
+};
 @Injectable({
     providedIn: 'root'
 })
 
 export class AuthService {
+
     private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
     public isAuthenticated$ = this.isAuthenticatedSubject.asObservable();
 
-    private apiUrl = 'https://localhost:5000/api/account/login/';
+    apiUrl: string;
 
-    constructor(private http: HttpClient) {
-        this.isAuthenticatedSubject.next(!!this.getToken());
+    constructor(private http: HttpClient, private apiServce: ApiService, @Inject(CookieService) private cookieService: CookieService) {
+        this.apiUrl = apiServce.getApiUrl() + 'api/account/';
+        this.isLoggedIn().subscribe(isLoggedIn => {
+            this.isAuthenticatedSubject.next(isLoggedIn);
+        });
     }
 
-    login(email: string, password: string): Observable<LoginResponse> {
-        return this.http.post<LoginResponse>(`${this.apiUrl}`, { email, password }).pipe(
-            map(response => {
-                if (response && response.token) {
-                    localStorage.setItem('token', response.token);
+    login(login: ILogin): Observable<any> {
+        return this.http.post<any>(this.apiUrl + `login`, login, requestOptions)
+            .pipe(
+                tap(response => {
                     this.isAuthenticatedSubject.next(true);
-                }
-                return response;
-            })
-        );
+                })
+            );
     }
 
-    logout(): void {
-        localStorage.removeItem('token');
-        this.isAuthenticatedSubject.next(false);
+    logout(): Observable<any> {
+        return this.http.post<any>(this.apiUrl + `logout`, null, requestOptions)
+            .pipe(
+                tap(response => {
+                    this.isAuthenticatedSubject.next(false);
+                })
+            )
     }
 
-    getToken(): string | null {
-        return localStorage.getItem('token');
+    isLoggedIn(): Observable<boolean> {
+        return this.http.get<boolean>(this.apiUrl + `check-auth`, requestOptions);
     }
 }

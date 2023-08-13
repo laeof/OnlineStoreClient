@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core'
 import { Router } from '@angular/router';
 import { IProduct } from 'src/app/models/products';
+import { ApiService } from 'src/app/services/api/api.service';
 
 @Component({
     selector: 'app-products',
@@ -9,9 +10,11 @@ import { IProduct } from 'src/app/models/products';
 })
 
 export class ProductsComponent {
-    constructor(private router: Router) { }
     @Input() product: IProduct
-
+    constructor(private router: Router, public apiService: ApiService) {
+        this.picUrl = apiService.getApiUrl();
+    }
+    picUrl: string;
     redirectToProduct(productId: string): void {
         this.router.navigate(['/Product', productId]);
     }

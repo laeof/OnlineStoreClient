@@ -2,6 +2,8 @@ import { Component, Input, OnInit, NgModule } from '@angular/core';
 import { ModalService } from 'src/app/services/modal/modal.service';
 import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { ILogin } from '../../../models/login'
+import { ApiService } from 'src/app/services/api/api.service';
 
 
 @Component({
@@ -18,11 +20,18 @@ export class LoginComponent implements OnInit {
 
   showLoginForm = true;
   showRegisterForm = false;
-  email: string = ''; // Добавлено
-  password: string = ''; // Добавлено
+
+  loginData: ILogin = {
+    email: '',
+    password: ''
+  }
 
   constructor(public modalService: ModalService,
-              private authService: AuthService) { }
+    private authService: AuthService,
+    public apiService: ApiService) {
+    this.picUrl = apiService.getApiUrl();
+  }
+  picUrl: string;
 
   ngOnInit(): void {
   }
@@ -31,15 +40,15 @@ export class LoginComponent implements OnInit {
     this.showLoginForm = !this.showLoginForm;
     this.showRegisterForm = !this.showRegisterForm;
   }
-  onLoginClick(email: string, password: string): void {
-    this.authService.login(email, password).subscribe(
-      response => {
-        console.log('Logged in successfully', response);
+  onLoginClick(loginData: ILogin): void {
+    this.authService.login(loginData).subscribe({
+      next: (response: any) => {
+        console.log('Успешный вход', response);
         this.modalService.close();
       },
-      error => {
-        console.error('Login error', error);
+      error: (error: any) => {
+        console.error('Ошибка входа', error);
       }
-    );
+    });
   }
 }
