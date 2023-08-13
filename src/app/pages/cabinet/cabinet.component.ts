@@ -3,6 +3,7 @@ import { Emitters } from 'src/app/emmiters/emmiters'
 import { IProduct } from 'src/app/models/products'
 import { IUser } from 'src/app/models/user'
 import { ModalService } from 'src/app/services/modal/modal.service'
+import { NavigationSettingsService } from 'src/app/services/navigation-settings/navigation_settings.service'
 import { ProductsService } from 'src/app/services/products/products.service'
 import { UserService } from 'src/app/services/user/user.service'
 
@@ -14,7 +15,7 @@ import { UserService } from 'src/app/services/user/user.service'
 
 export class CabinetPage {
     user: IUser;
-    constructor(private userService: UserService) {
+    constructor(private userService: UserService, private navigationService: NavigationSettingsService) {
         userService.getUser().subscribe({
             next: (user: any) => {
                 this.user = user;
@@ -24,5 +25,9 @@ export class CabinetPage {
                 console.error('Ошибка при получении пользователя', error);
             }
         });
+        
+    }
+    ngOnInit(): void {
+        this.navigationService.setNavigation();
     }
 }

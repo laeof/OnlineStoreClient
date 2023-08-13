@@ -8,6 +8,8 @@ export interface IElements {
     body: HTMLElement;
 }
 
+
+
 @Injectable({
     providedIn: 'root',
 })
@@ -21,19 +23,15 @@ export class SidebarService {
 
     elements$: Observable<IElements> = this.elementsSubject.asObservable();
 
-    constructor() {
-        this.setElements();
-    }
-
     setElements() {
-        const elements: IElements = {
-            sidebar: document.getElementById('sidebar'),
-            overlay: document.getElementById('overlay'),
-            togglebtn: document.getElementById('togglebtn'),
-            body: document.body,
-        };
+            const elements: IElements = {
+                sidebar: document.getElementById('sidebar'),
+                overlay: document.getElementById('overlay'),
+                togglebtn: document.getElementById('togglebtn'),
+                body: document.body,
+            };
 
-        if (elements.togglebtn != null && elements.overlay != null) {
+            if(elements.togglebtn != null && elements.overlay != null) {
             elements.togglebtn.addEventListener('click', this.toggleSidebar.bind(this));
             elements.overlay.addEventListener('click', this.toggleSidebar.bind(this));
         }

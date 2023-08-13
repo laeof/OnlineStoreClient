@@ -1,35 +1,36 @@
-.cabinet-section{
+.cabinet-section {
     display: flex;
     justify-content: center;
+
     svg {
         margin-right: 10px;
     }
+
+    .cabinet {
+        display: flex;
+        width: 65%;
+    }
+
+    .cabinet .icon {
+        margin-right: 15px;
+    }
 }
 
-.cabinet {
-    display: flex;
-    width: 65%;
-}
-
-.cabinet .icon {
-    margin-right: 15px;
-}
-
-@media screen and (max-width: 1600px){
+@media screen and (max-width: 1600px) {
     .cabinet {
         display: flex;
         width: 85%;
     }
 }
 
-@media screen and (max-width: 1366px){
+@media screen and (max-width: 1366px) {
     .cabinet {
         display: flex;
         width: 90%;
     }
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
     .cabinet {
         display: flex;
         width: 95%;
