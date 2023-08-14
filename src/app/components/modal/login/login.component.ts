@@ -4,6 +4,7 @@ import { NgxMaskDirective, NgxMaskPipe, provideNgxMask } from 'ngx-mask';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { ILogin } from '../../../models/login'
 import { ApiService } from 'src/app/services/api/api.service';
+import { IRegister } from 'src/app/models/register';
 
 
 @Component({
@@ -16,14 +17,19 @@ export class LoginComponent implements OnInit {
 
   @Input() title: string
 
-  phoneNumber: string = '';
-
   showLoginForm = true;
   showRegisterForm = false;
 
   loginData: ILogin = {
     email: '',
     password: ''
+  }
+  registerData: IRegister = {
+    email: '',
+    password: '',
+    firstName: '',
+    lastName: '',
+    phoneNumber: ''
   }
 
   constructor(public modalService: ModalService,
@@ -47,7 +53,18 @@ export class LoginComponent implements OnInit {
         this.modalService.close();
       },
       error: (error: any) => {
-        console.error('Ошибка входа', error);
+        console.log('Ошибка входа', error);
+      }
+    });
+  }
+  onRegisterClick(registerData: IRegister): void {
+    this.authService.register(registerData).subscribe({
+      next: (response: any) => {
+        console.log('successful register', response);
+        this.modalService.close();
+      },
+      error: (error: any) => {
+        console.log('Register error', error);
       }
     });
   }

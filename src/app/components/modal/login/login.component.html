@@ -26,22 +26,21 @@
 
       <label for="Name">Ім'я</label>
       <span asp-validation-for="Name" class="validation"></span>
-      <input type="text" name="Name" asp-for="Name">
+      <input type="text" name="Name" [(ngModel)]="registerData.firstName">
 
       <label for="Lastname">Прізвище</label>
-      <input type="text" name="Lastname" asp-for="Lastname">
+      <input type="text" name="Lastname" [(ngModel)]="registerData.lastName">
 
       <label for="PhoneNumber">Номер телефону</label>
-      <input type="text" name="PhoneNumber" mask="(000) 000-00-00" [(ngModel)]="phoneNumber" placeholder="(999)-999-99-99"/>
-
+      <input type="text" name="PhoneNumber" mask="(000) 000-00-00" [(ngModel)]="registerData.phoneNumber" placeholder="(999)-999-99-99"/>
 
       <label for="Email">Електронна пошта</label>
-      <input type="text" name="Email">
+      <input type="text" name="Email" [(ngModel)]="registerData.email">
 
       <label for="password">Пароль</label>
-      <input type="Password" name="Password" asp-for="Password">
+      <input type="Password" name="Password" [(ngModel)]="registerData.password">
 
-      <button class="button grayblack" type="submit">Зареєструватися</button>
+      <button class="button grayblack" (click)="onRegisterClick(registerData)" type="submit">Зареєструватися</button>
       <p>Вже є акаунт? <a (click)="toggleForm()">Увійти</a></p>
     </form>
   </div>

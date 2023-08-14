@@ -1,17 +1,16 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable, of } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 import { ApiService } from '../api/api.service';
 import { ILogin } from 'src/app/models/login';
 import { CookieOptions, CookieService } from 'ngx-cookie-service';
 import { IUser } from 'src/app/models/user';
+import { IRegister } from 'src/app/models/register';
 
-interface LoginResponse {
-    token: string
-}
+//activate cookie
 const requestOptions = {
-    withCredentials: true // Включаем передачу куки
+    withCredentials: true
 };
 @Injectable({
     providedIn: 'root'
@@ -31,8 +30,17 @@ export class AuthService {
         });
     }
 
-    login(login: ILogin): Observable<any> {
-        return this.http.post<any>(this.apiUrl + `login`, login, requestOptions)
+    login(login: ILogin): Observable<ILogin> {
+        return this.http.post<ILogin>(this.apiUrl + `login`, login, requestOptions)
+            .pipe(
+                tap(response => {
+                    this.isAuthenticatedSubject.next(true);
+                })
+            );
+    }
+
+    register(register: IRegister): Observable<IRegister> {
+        return this.http.post<IRegister>(this.apiUrl + `register`, register, requestOptions)
             .pipe(
                 tap(response => {
                     this.isAuthenticatedSubject.next(true);
