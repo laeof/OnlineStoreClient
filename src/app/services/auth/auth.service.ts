@@ -26,7 +26,10 @@ export class AuthService {
     constructor(private http: HttpClient, private apiServce: ApiService, @Inject(CookieService) private cookieService: CookieService) {
         this.apiUrl = apiServce.getApiUrl() + 'api/account/';
         this.isLoggedIn().subscribe(isLoggedIn => {
-            this.isAuthenticatedSubject.next(isLoggedIn);
+            this.isAuthenticatedSubject.next(isLoggedIn)
+            if(!isLoggedIn){
+                this.logout().subscribe();
+            }
         });
     }
 
