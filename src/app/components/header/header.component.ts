@@ -29,6 +29,10 @@ export class HeaderComponent {
         this.router.navigate(['/']);
     }
 
+    redirectToCatalog() {
+        this.router.navigate(['/Catalog'])
+    }
+
     redirectToCabinet(): void {
         this.router.navigate(['/Cabinet']);
     }

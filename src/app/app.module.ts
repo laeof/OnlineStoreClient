@@ -24,11 +24,15 @@ import { JWT_OPTIONS, JwtInterceptor, JwtModule } from '@auth0/angular-jwt';
 import { CartPage } from './pages/cart/cart.component';
 import { CabinetPage } from './pages/cabinet/cabinet.component';
 import { CookieService } from 'ngx-cookie-service';
+import { CatalogPage } from './pages/catalog/catalog.component';
+import { CategoryComponent } from './components/category/category.component';
+import { CategoriesComponent } from './components/categories/categories.component';
+import { CategoryPage } from './pages/category/categorypage.component';
 
 const maskConfigFunction: () => Partial<IConfig> = () => {
   return {
     validation: false,
-    shownMaskExpression: '(000) 000-00-00'
+    shownMaskExpression: '38(000) 000-00-00'
   };
 };
 
@@ -37,19 +41,23 @@ const maskConfigFunction: () => Partial<IConfig> = () => {
     AppComponent,
     HeaderComponent,
     FooterComponent,
+    SliderComponent,
+    PathComponent,
+    RateComponent,
     BannersComponent,
     ProductsComponent,
     BlogComponent,
     SidebarComponent,
     LoginComponent,
     GoodComponent,
+    CategoryComponent,
+    CategoriesComponent,
     CartPage,
     HomePage,
     ProductPage,
     CabinetPage,
-    SliderComponent,
-    PathComponent,
-    RateComponent,
+    CatalogPage,
+    CategoryPage,
   ],
   imports: [
     BrowserModule,

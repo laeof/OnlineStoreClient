@@ -39,9 +39,14 @@
     display: flex;
 }
 
+.good-card .wrap-img {
+    height: 210px;
+    display: flex;
+    align-items: center;
+}
+
 .good-card .up .good-img,
 .good-card .up .good-img2 {
-    height: 210px;
     width: 250px;
 }
 
@@ -103,9 +108,12 @@
         font-size: 14px;
     }
 
+    .good-card .wrap-img {
+        height: 150px;
+    }
+
     .good-card .up .good-img,
     .good-card .up .good-img2 {
-        height: 130px;
         width: 155px;
     }
 

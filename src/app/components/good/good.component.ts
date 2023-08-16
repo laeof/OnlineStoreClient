@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core'
 import { Router } from '@angular/router';
 import { IProduct } from 'src/app/models/products';
 import { ApiService } from 'src/app/services/api/api.service';
+import { SliderService } from 'src/app/services/slider/slider.service';
 
 @Component({
     selector: 'app-good',

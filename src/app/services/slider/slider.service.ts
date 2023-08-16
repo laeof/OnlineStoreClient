@@ -16,7 +16,7 @@ export class SliderService {
     this.startAutoSlide();
   }
 
-  getCurrentSlide(){
+  getCurrentSlide() {
     return this.currentSlide;
   }
 
