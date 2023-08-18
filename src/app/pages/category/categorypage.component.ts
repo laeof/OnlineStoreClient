@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core'
-import { ActivatedRoute, Route } from '@angular/router'
+import { ActivatedRoute, Route, Router } from '@angular/router'
 import { ICategory } from 'src/app/models/category'
 import { IProduct } from 'src/app/models/products'
 import { CategoryService } from 'src/app/services/category/category.service'
@@ -15,7 +15,7 @@ import { UserService } from 'src/app/services/user/user.service'
 export class CategoryPage {
     products: IProduct[] = [];
     category: ICategory;
-    constructor(private productsService: ProductsService, private userService: UserService, private categoryService: CategoryService, private route: ActivatedRoute) {
+    constructor(private productsService: ProductsService, private userService: UserService, private categoryService: CategoryService, private route: ActivatedRoute, private router: Router) {
 
     }
 
@@ -33,5 +33,8 @@ export class CategoryPage {
                 });
             }
         });
+    }
+    redirectToAddProduct(categoryId: string) {
+        this.router.navigate(['/AddProduct/', categoryId]);
     }
 }

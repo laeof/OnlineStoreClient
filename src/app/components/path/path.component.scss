@@ -4,12 +4,20 @@
     justify-content: center;
     padding-bottom: 10px;
     padding-top: 10px;
-}
-
-.path-section .path{
-    width: 69.5%;
-    display: flex;
-    justify-content: flex-start;
+    .path{
+        width: 69.5%;
+        display: flex;
+        justify-content: flex-start;
+        p {
+            cursor: pointer;
+        }
+        p:not(.separator):hover {
+            font-weight: 400;
+        }
+        .separator {
+            cursor: default;
+        }
+    }
 }
 
 @media screen and (max-width: 1366px){

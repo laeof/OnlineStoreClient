@@ -6,6 +6,7 @@ import { CartPage } from './pages/cart/cart.component';
 import { CabinetPage } from './pages/cabinet/cabinet.component';
 import { CatalogPage } from './pages/catalog/catalog.component';
 import { CategoryPage } from './pages/category/categorypage.component';
+import { AddProductPage } from './pages/addproduct/addproduct.component';
 
 const routes: Routes = [
   { path: 'Home', component: HomePage },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'Cart', component: CartPage },
   { path: 'Cabinet', component: CabinetPage },
   { path: 'Catalog', component: CatalogPage },
+  { path: 'AddProduct/:id', component: AddProductPage},
   { path: 'Categories/:id', component: CategoryPage },
   { path: '', redirectTo: '/Home', pathMatch: 'full' },
   { path: '**', redirectTo: '/Home', pathMatch: 'full' },

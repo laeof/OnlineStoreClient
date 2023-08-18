@@ -1,5 +1,70 @@
-.goods {
+.wrap-goodscategory {
     display: flex;
-    width: 60%;
-    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+
+    .path-section {
+        border: none;
+    }
+
+    .category-section {
+        display: flex;
+        justify-content: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 100%;
+
+        .title {
+            width: 70%;
+            margin-bottom: 0;
+            margin-top: 0;
+            text-align: left;
+        }
+    }
+
+    .add-product {
+        position: absolute;
+        right: 250px;
+        bottom: 25px;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        border-radius: 50px;
+        transition: box-shadow 0.6s, background-color 0.6s, transform 0.6s;
+        background-color: transparent;
+        svg{
+            transition: transform 0.6s;
+        }
+    }
+
+    .add-product:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        svg {
+            transform: rotate(-180deg);
+        }
+        transform: scale(1.1);
+    }
+
+    .add-product:hover {
+        box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .goodsincategory {
+        width: 85%;
+        padding-top: 10px;
+        position: relative;
+
+        .goods {
+            display: flex;
+            width: 90%;
+        }
+
+        .category-sidebar {
+            position: fixed;
+            width: 300px;
+            background: rgba(0, 0, 0, 0.05);
+            height: 500px;
+        }
+    }
 }

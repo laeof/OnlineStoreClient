@@ -1,7 +1,9 @@
-import { Component, Input } from '@angular/core'
+import { Component, Input, OnInit } from '@angular/core'
 import { Router } from '@angular/router';
+import { ICategory } from 'src/app/models/category';
 import { IProduct } from 'src/app/models/products';
 import { ApiService } from 'src/app/services/api/api.service';
+import { CategoryService } from 'src/app/services/category/category.service';
 
 @Component({
     selector: 'app-products',
@@ -9,10 +11,16 @@ import { ApiService } from 'src/app/services/api/api.service';
     styleUrls: ['./products.component.scss']
 })
 
-export class ProductsComponent {
+export class ProductsComponent implements OnInit {
     @Input() product: IProduct
-    constructor(private router: Router, public apiService: ApiService) {
+    category: ICategory
+    constructor(private router: Router, public apiService: ApiService, private categoryService: CategoryService) {
         this.picUrl = apiService.getApiUrl();
+    }
+    ngOnInit(): void {
+        this.categoryService.getId(this.product.categoryId).subscribe(category => {
+            this.category = category;
+        })
     }
     picUrl: string;
     redirectToProduct(productId: string): void {

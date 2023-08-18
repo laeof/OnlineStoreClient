@@ -28,6 +28,7 @@ import { CatalogPage } from './pages/catalog/catalog.component';
 import { CategoryComponent } from './components/category/category.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { CategoryPage } from './pages/category/categorypage.component';
+import { AddProductPage } from './pages/addproduct/addproduct.component';
 
 const maskConfigFunction: () => Partial<IConfig> = () => {
   return {
@@ -58,6 +59,7 @@ const maskConfigFunction: () => Partial<IConfig> = () => {
     CabinetPage,
     CatalogPage,
     CategoryPage,
+    AddProductPage,
   ],
   imports: [
     BrowserModule,
