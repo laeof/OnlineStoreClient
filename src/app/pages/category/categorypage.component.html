@@ -2,14 +2,11 @@
     <app-path style="width: 100%" [category] = 'category'>
 
     </app-path>
-    <section class="category-section section">
-        <h2 class="title">Категорія: {{category.name}}</h2>
-    </section>
     <div class="goodsincategory">
         <section class="category-sidebar">
 
         </section>
-        <nav class="nav" style="padding-left: 300px">
+        <nav class="nav">
             <ul class="goods">
                 <app-products *ngFor="let product of products; let i = index" [product]="product">
 

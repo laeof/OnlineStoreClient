@@ -6,7 +6,7 @@
                 <img class="icon" src="{{picUrl}}img/svg/burgerbtn.svg" id="togglebtn">
             </ul>
             <ul class="wrap-logo" (click)="redirectToHome()">
-                <img class="logo" src="{{picUrl}}img/png/logo.png" >
+                <img class="logo" src="{{picUrl}}img/png/logo.png">
             </ul>
             <ul class="wrap-search">
                 <img class="input-img" src="{{picUrl}}img/svg/search.svg">
@@ -31,7 +31,8 @@
                 <li class="item" id="settings" *ngIf="authService.isAuthenticated$ | async" (click)="redirectToAdmin()">
                     <img class="icon" src="{{picUrl}}img/svg/admin.svg">
                 </li>
-                <li class="item" *ngIf="authService.isAuthenticated$ | async" (click)="authService.logout().subscribe();">
+                <li class="item" *ngIf="authService.isAuthenticated$ | async"
+                    (click)="authService.logout().subscribe();">
                     <img class="icon" src="{{picUrl}}img/svg/exit.svg">
                 </li>
             </ul>
@@ -43,78 +44,41 @@
                 <li class="item">
                     <span class="button gray" (click)="redirectToCatalog()">Каталог</span>
                     <ul class="drop-list">
-                        <li class="drop-item">
-                            1
-                        </li>
-                        <li class="drop-item">
-                            2
-                        </li>
+                        <ng-container *ngFor="let item of categories">
+                            <li class="drop-item" (click)="redirectToCategory(item.id)">
+                                {{item.name}}
+                            </li>
+                        </ng-container>
                     </ul>
                 </li>
                 <li class="item">
                     <span class="button white">Акції</span>
                     <ul class="drop-list">
-                        <li class="drop-item">
-                            1
-                        </li>
-                        <li class="drop-item">
-                            2
-                        </li>
                     </ul>
                 </li>
                 <li class="item">
                     <span class="button white">Оплата</span>
                     <ul class="drop-list">
-                        <li class="drop-item">
-                            1
-                        </li>
-                        <li class="drop-item">
-                            2
-                        </li>
                     </ul>
                 </li>
                 <li class="item">
                     <span class="button white">Гарантії</span>
                     <ul class="drop-list">
-                        <li class="drop-item">
-                            1
-                        </li>
-                        <li class="drop-item">
-                            2
-                        </li>
                     </ul>
                 </li>
                 <li class="item">
                     <span class="button white">Контакти</span>
                     <ul class="drop-list">
-                        <li class="drop-item">
-                            1
-                        </li>
-                        <li class="drop-item">
-                            2
-                        </li>
                     </ul>
                 </li>
                 <li class="item">
                     <span class="button white">Доставка</span>
                     <ul class="drop-list">
-                        <li class="drop-item">
-                            1
-                        </li>
-                        <li class="drop-item">
-                            2
-                        </li>
                     </ul>
                 </li>
                 <li class="item">
                     <span class="button white">Інформація</span>
                     <ul class="drop-list">
-                        <li class="drop-item">
-                            1
-                        </li>
-                        <li class="drop-item">
-                            2
-                        </li>
                     </ul>
                 </li>
             </ul>

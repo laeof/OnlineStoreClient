@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     height: 100%;
+    width: 100%;
 
     .path-section {
         border: none;
@@ -24,9 +25,9 @@
     }
 
     .add-product {
-        position: absolute;
-        right: 250px;
-        bottom: 25px;
+        position: fixed;
+        right: 70px;
+        bottom: 100px;
         width: 50px;
         height: 50px;
         cursor: pointer;
@@ -51,20 +52,27 @@
     }
 
     .goodsincategory {
-        width: 85%;
         padding-top: 10px;
-        position: relative;
-
-        .goods {
+        display: flex;
+        width: 95%;
+        justify-content: space-around;
+        .nav {
             display: flex;
-            width: 90%;
+            justify-content: center;
+            align-items: flex-start;
+            max-width: 1250px;
+            .goods {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                width: 100%;
+            }
         }
 
         .category-sidebar {
-            position: fixed;
             width: 300px;
             background: rgba(0, 0, 0, 0.05);
-            height: 500px;
+            height: 1000px;
         }
     }
 }

@@ -2,13 +2,15 @@
     <nav class="nav">
         <ul class="list">
             <li class="wrap-logo">
-                <img class="logo" src="{{picUrl}}img/png/logo.png" onclick=" window.location.href='/Home/';">
+                <img class="logo" src="{{picUrl}}img/png/logo.png" onclick="window.location.href='/Home/';">
+                <img class="icon" src="{{picUrl}}img/svg/exit.svg" *ngIf="authService.isAuthenticated$ | async" (click)="authService.logout().subscribe();">
             </li>
         </ul>
         <ul class="list">
             <li class="personal">
                 <img class="logo" src="{{picUrl}}img/svg/personal.svg">
-                <p class="name">Name Surname</p>
+                <p class="name" *ngIf="authService.isAuthenticated$ | async">{{user.firstName}} {{user.lastName}}</p>
+                <p class="name" *ngIf="!(authService.isAuthenticated$ | async)">Name Surname</p>
             </li>
         </ul>
         <ul class="list">
