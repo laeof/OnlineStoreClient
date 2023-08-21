@@ -1,0 +1,11 @@
+.categories-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    .categories {
+        display: flex;
+        justify-content: center;
+    }
+}

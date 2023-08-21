@@ -12,7 +12,14 @@ import { UserService } from 'src/app/services/user/user.service';
 })
 
 export class SidebarComponent {
-    user: IUser;
+    user: IUser = {
+        email: null,
+        firstName: null,
+        lastName: null,
+        gender: null,
+        role: null,
+        phoneNumber: null,
+    };
     constructor(private router: Router, public apiService: ApiService, public authService: AuthService, private userService: UserService) {
         this.picUrl = apiService.getApiUrl();
         userService.getUser().subscribe({

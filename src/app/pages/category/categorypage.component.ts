@@ -12,9 +12,14 @@ import { UserService } from 'src/app/services/user/user.service'
     styleUrls: ['./categorypage.component.scss']
 })
 
-export class CategoryPage implements OnInit{
+export class CategoryPage implements OnInit {
     products: IProduct[] = [];
-    category: ICategory;
+    category: ICategory = {
+        id: '',
+        name: '',
+        imgPath: '',
+        products: []
+    };
     constructor(private productsService: ProductsService, private userService: UserService, private categoryService: CategoryService, private route: ActivatedRoute, private router: Router) {
 
     }
@@ -26,17 +31,19 @@ export class CategoryPage implements OnInit{
                 this.categoryService.getId(categoryId).subscribe(category => {
                     this.category = category;
                     this.products = [];
-                    this.category.products.forEach(element => {
-                        this.productsService.getById(element.id).subscribe(product => {
-                            this.products.push(product);
+                    if (this.category.products != null) {
+                        this.category.products.forEach(element => {
+                            this.productsService.getById(element.id).subscribe(product => {
+                                this.products.push(product);
+                            });
                         });
-                    });
+                    }
                 });
             }
         });
     }
 
-    
+
     redirectToAddProduct(categoryId: string) {
         this.router.navigate(['/AddProduct/', categoryId]);
     }

@@ -40,7 +40,7 @@ export class HeaderComponent {
         this.router.navigate(['/Catalog'])
     }
 
-    redirectToCategory(id: string){
+    redirectToCategory(id: string) {
         const randomParam = new Date().getTime();
         this.router.navigate(['/Categories/' + id]);
     }

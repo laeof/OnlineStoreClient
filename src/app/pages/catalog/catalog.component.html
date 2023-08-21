@@ -1,5 +1,10 @@
-<div>
-    <app-categories>
-        
-    </app-categories>
-</div>
+<section class="categories-section section">
+    <h2 class="title">
+        Доступні категорії
+    </h2>
+    <div class="categories">
+        <app-category class="app-category" *ngFor="let category of categories; let i = index" [category]="category">
+
+        </app-category>
+    </div>
+</section>

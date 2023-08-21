@@ -14,8 +14,16 @@ import { UserService } from 'src/app/services/user/user.service'
 })
 
 export class CabinetPage {
-    user: IUser;
-    constructor(private userService: UserService, private navigationService: NavigationSettingsService) {
+    user: IUser = {
+        firstName: null,
+        lastName: null,
+        email: null,
+        gender: null,
+        role: null,
+        phoneNumber: null,
+    }
+    constructor(private userService: UserService, 
+                private navigationService: NavigationSettingsService) {
         userService.getUser().subscribe({
             next: (user: any) => {
                 this.user = user;

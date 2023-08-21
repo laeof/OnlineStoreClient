@@ -1,0 +1,21 @@
+<div>
+    <form>
+        <label for="Name">Назва</label>
+        <input type="text" [(ngModel)]="productData.name" name="Name">
+        <label for="Name">Назва</label>
+        <input type="text" [(ngModel)]="productData.description" name="Name">
+        <label for="Name">Назва</label>
+        <input type="text" [(ngModel)]="productData.price" name="Name">
+        <label for="Name">Назва</label>
+        <input type="text" [(ngModel)]="productData.amount" name="Name">
+
+        <select [(ngModel)]="productData.categoryId">
+            <ng-container *ngFor="let item of categories">
+                <option>
+                    {{item.name}}
+                </option>
+            </ng-container>
+        </select>
+        <button (click)="addProduct(productData)"></button>
+    </form>
+</div>

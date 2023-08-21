@@ -12,9 +12,25 @@ import { ProductsService } from 'src/app/services/products/products.service'
 })
 
 export class ProductPage {
-    product: IProduct;
+    product: IProduct = {
+        amount: 0,
+        name: '',
+        description: '',
+        price: 0,
+        categoryId: '',
+        images: [],
+        id: '',
+        created: '',
+        isNew: false,
+        isDeleted: false
+    };
     products: IProduct[] = [];
-    category: ICategory;
+    category: ICategory = {
+        id: '',
+        name: '',
+        imgPath: '',
+        products: []
+    };
 
     constructor(private productsService: ProductsService, private route: ActivatedRoute, private categoryService: CategoryService) { }
 

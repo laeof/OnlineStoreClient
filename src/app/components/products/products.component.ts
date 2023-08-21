@@ -13,7 +13,12 @@ import { CategoryService } from 'src/app/services/category/category.service';
 
 export class ProductsComponent implements OnInit {
     @Input() product: IProduct
-    category: ICategory
+    category: ICategory = {
+        imgPath: '',
+        id: '',
+        name: '',
+        products: []
+    }
     constructor(private router: Router, public apiService: ApiService, private categoryService: CategoryService) {
         this.picUrl = apiService.getApiUrl();
     }

@@ -1,4 +1,6 @@
 <div class="category-card" (click)="redirectToCategory(category.id)">
-    <img class="" src="{{picUrl}}/{{category.imgPath}}">
+    <div class="category-wrapper-img">
+        <img class="category-img" src="{{picUrl}}/{{category.imgPath}}">
+    </div>
     <h2 class="title">{{category.name}}</h2>
 </div>

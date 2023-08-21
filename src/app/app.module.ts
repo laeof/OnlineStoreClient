@@ -26,7 +26,6 @@ import { CabinetPage } from './pages/cabinet/cabinet.component';
 import { CookieService } from 'ngx-cookie-service';
 import { CatalogPage } from './pages/catalog/catalog.component';
 import { CategoryComponent } from './components/category/category.component';
-import { CategoriesComponent } from './components/categories/categories.component';
 import { CategoryPage } from './pages/category/categorypage.component';
 import { AddProductPage } from './pages/addproduct/addproduct.component';
 
@@ -52,7 +51,6 @@ const maskConfigFunction: () => Partial<IConfig> = () => {
     LoginComponent,
     GoodComponent,
     CategoryComponent,
-    CategoriesComponent,
     CartPage,
     HomePage,
     ProductPage,
