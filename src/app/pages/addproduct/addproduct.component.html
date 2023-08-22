@@ -2,20 +2,59 @@
     <form>
         <label for="Name">Назва</label>
         <input type="text" [(ngModel)]="productData.name" name="Name">
-        <label for="Name">Назва</label>
-        <input type="text" [(ngModel)]="productData.description" name="Name">
-        <label for="Name">Назва</label>
-        <input type="text" [(ngModel)]="productData.price" name="Name">
-        <label for="Name">Назва</label>
-        <input type="text" [(ngModel)]="productData.amount" name="Name">
+        <label for="Description">Description</label>
+        <input type="text" [(ngModel)]="productData.description" name="Description">
+        <label for="Price">Price</label>
+        <input type="text" [(ngModel)]="productData.price" name="Price">
+        <label for="Amount">Amount</label>
+        <input type="text" [(ngModel)]="productData.amount" name="Amount">
 
-        <select [(ngModel)]="productData.categoryId">
-            <ng-container *ngFor="let item of categories">
-                <option>
-                    {{item.name}}
-                </option>
-            </ng-container>
+        <ngx-file-drop dropZoneLabel="Drop files here" (onFileOver)="fileOver($event)"
+            (onFileLeave)="fileLeave($event)">
+            <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+                Optional custom content that replaces the the entire default content.
+                <button type="button" (click)="openFileSelector()">Browse Files</button>
+            </ng-template>
+        </ngx-file-drop>
+
+        <select [ngModel]="productData.categoryId" (ngModelChange)="productData.categoryId = $event" name="categoryId">
+            <option *ngFor="let item of categories" [ngValue]="item.id">
+                {{item.name}}
+            </option>
         </select>
+        <div [ngSwitch]="productData.categoryId">
+            <div *ngSwitchCase="'d478b22d-e5ac-4ffc-b7ef-26e586aac448'">
+                <label for="diagonal">diagonal</label>
+                <input type="text" [(ngModel)]="productData.monitor.diagonal" name="diagonal">
+
+                <label for="brightness">brightness</label>
+                <input type="text" [(ngModel)]="productData.monitor.brightness" name="brightness">
+
+                <label for="maxtrixType">maxtrixType</label>
+                <input type="text" [(ngModel)]="productData.monitor.maxtrixType" name="maxtrixType">
+
+                <label for="ratio">ratio</label>
+                <input type="text" [(ngModel)]="productData.monitor.ratio" name="ratio">
+
+                <label for="reaction">reaction</label>
+                <input type="text" [(ngModel)]="productData.monitor.reaction" name="reaction">
+
+                <label for="frequency">frequency</label>
+                <input type="text" [(ngModel)]="productData.monitor.frequency" name="frequency">
+
+                <label for="interfaces">interfaces</label>
+                <input type="text" [(ngModel)]="productData.monitor.interfaces" name="interfaces">
+
+                <label for="contrast">contrast</label>
+                <input type="text" [(ngModel)]="productData.monitor.contrast" name="contrast">
+            </div>
+            <div *ngSwitchCase="'e1c0e946-ac0e-4834-a04b-e12ee36a64dc'">
+
+            </div>
+            <div *ngSwitchDefault>
+                <h2 class="title">Оберіть категорію</h2>
+            </div>
+        </div>
         <button (click)="addProduct(productData)"></button>
     </form>
 </div>

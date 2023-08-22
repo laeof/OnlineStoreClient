@@ -17,7 +17,11 @@ export interface IImageProduct {
     fileName: string
 }
 
-export interface IMonitor extends ICreateProduct{
+export interface IKeyboard {
+
+}
+
+export interface IMonitor {
     diagonal: string | null
     brightness: string | null
     maxtrixType: string | null
@@ -29,10 +33,12 @@ export interface IMonitor extends ICreateProduct{
 }
 
 export interface ICreateProduct {
-    name: string | null,
+    name: string,
     description: string | null,
-    price: number | null,
+    price: number,
     amount: number | null,
-    categoryId: string | null,
+    categoryId: string,
     images: IImageProduct[] | null,
+    monitor: IMonitor,
+    keyboard: IKeyboard
 }

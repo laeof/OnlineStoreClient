@@ -28,6 +28,7 @@ import { CatalogPage } from './pages/catalog/catalog.component';
 import { CategoryComponent } from './components/category/category.component';
 import { CategoryPage } from './pages/category/categorypage.component';
 import { AddProductPage } from './pages/addproduct/addproduct.component';
+import { NgxFileDropModule } from 'ngx-file-drop';
 
 const maskConfigFunction: () => Partial<IConfig> = () => {
   return {
@@ -66,6 +67,7 @@ const maskConfigFunction: () => Partial<IConfig> = () => {
     FormsModule,
     NgxMaskDirective, 
     NgxMaskPipe,
+    NgxFileDropModule,
     JwtModule.forRoot({})
   ],
   providers: [
@@ -76,7 +78,7 @@ const maskConfigFunction: () => Partial<IConfig> = () => {
       multi: true
     },
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
-    CookieService
+    CookieService,
   ],
   bootstrap: [AppComponent],
   exports: [RouterModule]
