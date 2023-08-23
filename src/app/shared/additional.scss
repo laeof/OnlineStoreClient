@@ -61,7 +61,8 @@
 
 .additional-section .good-card .up .good-img,
 .additional-section .good-card .up .good-img2 {
-    width: 155px;
+    max-width: 155px;
+    max-height: 130px;
 }
 
 .additional-section .good-card .up .good-cost {

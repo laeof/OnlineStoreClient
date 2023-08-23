@@ -1,60 +1,100 @@
-<div>
-    <form>
-        <label for="Name">Назва</label>
-        <input type="text" [(ngModel)]="productData.name" name="Name">
-        <label for="Description">Description</label>
-        <input type="text" [(ngModel)]="productData.description" name="Description">
-        <label for="Price">Price</label>
-        <input type="text" [(ngModel)]="productData.price" name="Price">
-        <label for="Amount">Amount</label>
-        <input type="text" [(ngModel)]="productData.amount" name="Amount">
-
-        <ngx-file-drop dropZoneLabel="Drop files here" (onFileOver)="fileOver($event)"
-            (onFileLeave)="fileLeave($event)">
-            <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
-                Optional custom content that replaces the the entire default content.
-                <button type="button" (click)="openFileSelector()">Browse Files</button>
-            </ng-template>
-        </ngx-file-drop>
-
-        <select [ngModel]="productData.categoryId" (ngModelChange)="productData.categoryId = $event" name="categoryId">
-            <option *ngFor="let item of categories" [ngValue]="item.id">
-                {{item.name}}
-            </option>
-        </select>
-        <div [ngSwitch]="productData.categoryId">
-            <div *ngSwitchCase="'d478b22d-e5ac-4ffc-b7ef-26e586aac448'">
-                <label for="diagonal">diagonal</label>
-                <input type="text" [(ngModel)]="productData.monitor.diagonal" name="diagonal">
-
-                <label for="brightness">brightness</label>
-                <input type="text" [(ngModel)]="productData.monitor.brightness" name="brightness">
-
-                <label for="maxtrixType">maxtrixType</label>
-                <input type="text" [(ngModel)]="productData.monitor.maxtrixType" name="maxtrixType">
-
-                <label for="ratio">ratio</label>
-                <input type="text" [(ngModel)]="productData.monitor.ratio" name="ratio">
-
-                <label for="reaction">reaction</label>
-                <input type="text" [(ngModel)]="productData.monitor.reaction" name="reaction">
-
-                <label for="frequency">frequency</label>
-                <input type="text" [(ngModel)]="productData.monitor.frequency" name="frequency">
-
-                <label for="interfaces">interfaces</label>
-                <input type="text" [(ngModel)]="productData.monitor.interfaces" name="interfaces">
-
-                <label for="contrast">contrast</label>
-                <input type="text" [(ngModel)]="productData.monitor.contrast" name="contrast">
+<div class="addproduct-section section">
+    <div class="form-wrapper">
+        <form class="form">
+            <div class="properties">
+                <div class="input-property">
+                    <label for="Name">Назва</label>
+                    <input type="text" [(ngModel)]="productData.name" name="Name">
+                </div>
+                <div class="input-property">
+                    <label for="Description">Опис</label>
+                    <input type="text" [(ngModel)]="productData.description" name="Description">
+                </div>
+                <div class="input-property">
+                    <label for="Price">Ціна</label>
+                    <input type="text" [(ngModel)]="productData.price" name="Price">
+                </div>
+                <div class="input-property">
+                    <label for="Amount">Кількість</label>
+                    <input type="text" [(ngModel)]="productData.amount" name="Amount">
+                </div>
             </div>
-            <div *ngSwitchCase="'e1c0e946-ac0e-4834-a04b-e12ee36a64dc'">
+            <div class="ngx-file-drop-wrap">
+                <ngx-file-drop dropZoneClassName="ngx-file-drop" (onFileOver)="fileOver($event)"
+                    (onFileLeave)="fileLeave($event)" (onFileDrop)="fileDrop($event)">
+                    <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector" > 
+                        <div class="file-info">
+                            <div class="file-drop">
+                                <p class="file-drop-message">Завантажте або перетягніть сюди 2 або більше файлів (.jpg)
+                                </p>
+                                <button type="button" class="button white" (click)="openFileSelector()">Завантажити
+                                    файли</button>
+                            </div>
+                            <div class="files" *ngIf="files != null && files.length > 0">
+                                <ul>
+                                    <li *ngFor="let file of files">{{ file.relativePath }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngx-file-drop>
+            </div>
+            <div class="properties">
+                <div class="input-property">
+                    <label for="categoryId">Категорія</label>
+                    <select [ngModel]="productData.categoryId" (ngModelChange)="productData.categoryId = $event"
+                        name="categoryId">
+                        <option *ngFor="let item of categories" [ngValue]="item.id">
+                            {{item.name}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div [ngSwitch]="productData.categoryId">
+                <div *ngSwitchCase="'d478b22d-e5ac-4ffc-b7ef-26e586aac448'" class="form">
+                    <div class="properties">
+                        <div class="input-property">
+                            <label for="diagonal">Діагональ</label>
+                            <input type="text" [(ngModel)]="productData.monitor.diagonal" name="diagonal">
+                        </div>
+                        <div class="input-property">
+                            <label for="brightness">Яскравість</label>
+                            <input type="text" [(ngModel)]="productData.monitor.brightness" name="brightness">
+                        </div>
+                        <div class="input-property">
+                            <label for="maxtrixType">Тип матриці</label>
+                            <input type="text" [(ngModel)]="productData.monitor.matrixType" name="maxtrixType">
+                        </div>
+                        <div class="input-property">
+                            <label for="ratio">Співвідношення сторін</label>
+                            <input type="text" [(ngModel)]="productData.monitor.ratio" name="ratio">
+                        </div>
+                        <div class="input-property">
+                            <label for="reaction">Час реакції</label>
+                            <input type="text" [(ngModel)]="productData.monitor.reaction" name="reaction">
+                        </div>
+                        <div class="input-property">
+                            <label for="frequency">Частота матриці</label>
+                            <input type="text" [(ngModel)]="productData.monitor.frequency" name="frequency">
+                        </div>
+                        <div class="input-property">
+                            <label for="interfaces">Інтерфейси</label>
+                            <input type="text" [(ngModel)]="productData.monitor.interfaces" name="interfaces">
+                        </div>
+                        <div class="input-property">
+                            <label for="contrast">Контраст</label>
+                            <input type="text" [(ngModel)]="productData.monitor.contrast" name="contrast">
+                        </div>
+                    </div>
+                </div>
+                <div *ngSwitchCase="'e1c0e946-ac0e-4834-a04b-e12ee36a64dc'">
 
+                </div>
+                <div *ngSwitchDefault>
+                    <h2 class="title">Оберіть категорію</h2>
+                </div>
             </div>
-            <div *ngSwitchDefault>
-                <h2 class="title">Оберіть категорію</h2>
-            </div>
-        </div>
-        <button (click)="addProduct(productData)"></button>
-    </form>
+            <button class="button gray" (click)="addProduct(productData)">Створити продукт</button>
+        </form>
+    </div>
 </div>

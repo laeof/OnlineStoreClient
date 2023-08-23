@@ -1,34 +1,29 @@
-import { Component, OnInit } from '@angular/core'
-import { Emitters } from 'src/app/emmiters/emmiters'
+import { Component, OnInit, ViewEncapsulation } from '@angular/core'
 import { ICategory } from 'src/app/models/category'
-import { ICreateProduct, IProduct } from 'src/app/models/products'
-import { IUser } from 'src/app/models/user'
+import { ICreateProduct, IImageProduct, IProduct } from 'src/app/models/products'
 import { CategoryService } from 'src/app/services/category/category.service'
-import { ModalService } from 'src/app/services/modal/modal.service'
-import { NavigationSettingsService } from 'src/app/services/navigation-settings/navigation_settings.service'
 import { ProductsService } from 'src/app/services/products/products.service'
-import { UserService } from 'src/app/services/user/user.service'
 import { NgxFileDropEntry, FileSystemFileEntry, FileSystemDirectoryEntry } from 'ngx-file-drop';
-import { HttpHeaders } from '@angular/common/http'
 
 @Component({
     selector: 'app-addproduct',
     templateUrl: './addproduct.component.html',
+    styleUrls: ['./addproduct.component.scss'],
 })
 
 export class AddProductPage {
     categories: ICategory[] = [];
     productData: ICreateProduct = {
-        amount: null,
+        amount: 0,
         name: '',
-        description: null,
+        description: '',
         price: 0,
         categoryId: '',
         images: null,
         monitor: {
             diagonal: '',
             brightness: null,
-            maxtrixType: null,
+            matrixType: '',
             ratio: null,
             reaction: null,
             frequency: null,
@@ -39,7 +34,8 @@ export class AddProductPage {
 
         }
     };
-    http: any
+    imageProduct: IImageProduct[] = [];
+
     constructor(
         public categoryService: CategoryService,
         private productsService: ProductsService
@@ -53,42 +49,65 @@ export class AddProductPage {
     }
 
     addProduct(productData: ICreateProduct) {
-        this.productsService.addProduct(productData).subscribe();
+
+        const formData = new FormData()
+
+        for (const dropped of this.files) {
+            const fileEntry = dropped.fileEntry as FileSystemFileEntry;
+            fileEntry.file((file: File) => {
+                formData.append('file', file, dropped.relativePath)
+            });
+        }
+
+        this.files.forEach(element => {
+            var img: IImageProduct = { fileName: element.relativePath };
+            this.imageProduct?.push(img);
+        });
+
+        this.productData.images = this.imageProduct;
+
+        console.log(formData);
+
+        this.productsService.addProduct(formData).subscribe();
     }
 
     public files: NgxFileDropEntry[] = [];
 
-    public dropped(files: NgxFileDropEntry[]) {
-        this.files = files;
-        for (const droppedFile of files) {
-
-            // Is it a file?
-            if (droppedFile.fileEntry.isFile) {
-                const fileEntry = droppedFile.fileEntry as FileSystemFileEntry;
-                fileEntry.file((file: File) => {
-
-                    // Here you can access the real file
-                    console.log(droppedFile.relativePath, file);
-
-                    // You could upload it like this:
-                    const formData = new FormData()
-                    formData.append('logo', file, droppedFile.relativePath)
-
-                    
-                });
-            } else {
-                // It was a directory (empty directories are added, otherwise only files)
-                const fileEntry = droppedFile.fileEntry as FileSystemDirectoryEntry;
-                console.log(droppedFile.relativePath, fileEntry);
-            }
-        }
-    }
-
     public fileOver(event: any) {
-        console.log(event);
+        //console.log(event);
     }
 
     public fileLeave(event: any) {
-        console.log(event);
+        //console.log(event);
     }
+
+    public fileDrop(event: any) {
+        const validExtensions = ['.jpg'];
+        this.files = event.filter((file: NgxFileDropEntry) => {
+            if (file.fileEntry?.isFile) {
+                const fileEntry = file.fileEntry as FileSystemFileEntry;
+                if (fileEntry.name) {
+                    const extension = fileEntry.name.split('.').pop()?.toLowerCase();
+                    if (!(extension && validExtensions.includes('.' + extension))) {
+                        console.log("invalid file: must be .jpg")
+                    }
+
+                    //const uniqueName = this.generateUniqueFileName(fileEntry.name);
+
+                    //file.relativePath = uniqueName;
+
+                    return extension && validExtensions.includes('.' + extension);
+                }
+            }
+            return false;
+        });
+    }
+    private generateUniqueFileName(originalFileName: string): string {
+        const timestamp = new Date().getTime();
+        const randomString = Math.random().toString(36).substring(7);
+        const extension = originalFileName.split('.').pop();
+        const uniqueName = `${timestamp}_${randomString}.${extension}`;
+        return uniqueName;
+    }
+
 }

@@ -43,11 +43,13 @@
     height: 210px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 .good-card .up .good-img,
 .good-card .up .good-img2 {
-    width: 250px;
+    max-width: 250px;
+    max-height: 200px;
 }
 
 .good-card .up .top {
@@ -114,7 +116,8 @@
 
     .good-card .up .good-img,
     .good-card .up .good-img2 {
-        width: 155px;
+        max-width: 155px;
+        max-height: 130px;
     }
 
     .good-card .up .good-cost{

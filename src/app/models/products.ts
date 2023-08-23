@@ -24,7 +24,7 @@ export interface IKeyboard {
 export interface IMonitor {
     diagonal: string | null
     brightness: string | null
-    maxtrixType: string | null
+    matrixType: string | null
     ratio: string | null
     reaction: string | null
     frequency: string | null
@@ -41,4 +41,9 @@ export interface ICreateProduct {
     images: IImageProduct[] | null,
     monitor: IMonitor,
     keyboard: IKeyboard
+}
+
+export interface IAddProduct {
+    product: ICreateProduct | null,
+    formData: FormData | null
 }
