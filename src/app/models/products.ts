@@ -42,8 +42,3 @@ export interface ICreateProduct {
     monitor: IMonitor,
     keyboard: IKeyboard
 }
-
-export interface IAddProduct {
-    product: ICreateProduct | null,
-    formData: FormData | null
-}

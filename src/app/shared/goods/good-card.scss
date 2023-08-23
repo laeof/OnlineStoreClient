@@ -6,93 +6,99 @@
     transition: background-color 0.3s;
     width: 285px;
     margin-bottom: 20px;
-}
 
-.good-card .down {
-    visibility: hidden;
-    transform: translateY(-50%);
-    transition: transform 0.3s, visibility 0.13s, background-color 0.3s;
-    z-index: 1;
-}
+    .up {
+        .wrap-img {
+            height: 220px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-.good-card:hover {
-    background-color: rgb(211, 211, 211);
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
+            .good-img,
+            .good-img2 {
+                max-width: 250px;
+                max-height: 200px;
+            }
 
-.good-card:hover .down {
-    visibility: visible;
-    transform: translateY(0);
-    background-color: rgb(211, 211, 211);
-}
+            .good-img2 {
+                display: none;
+            }
+        }
 
-.good-card:hover .up .good-img {
-    display: none;
-}
+        .top {
+            margin-bottom: 15px;
 
-.good-card .up .good-img2 {
-    display: none;
-}
+            .good-name {
+                margin-right: 20%;
+                font-weight: 400;
+                height: 50px;
+            }
+        }
 
-.good-card:hover .up .good-img2 {
-    display: flex;
-}
+        .bottom {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            z-index: 2;
 
-.good-card .wrap-img {
-    height: 210px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+            .good-category {
+                font-weight: 100;
+            }
 
-.good-card .up .good-img,
-.good-card .up .good-img2 {
-    max-width: 250px;
-    max-height: 200px;
-}
+            .good-cost {
+                font-weight: 500;
+                color: rgb(192, 25, 25);
+            }
+        }
+    }
 
-.good-card .up .top {
-    margin-bottom: 15px;
-}
+    .down {
+        visibility: hidden;
+        transform: translateY(-50%);
+        transition: transform 0.3s, visibility 0.13s, background-color 0.3s;
+        z-index: 1;
 
-.good-card .up .top .good-name {
-    margin-right: 20%;
-    font-weight: 400;
-}
+        position: absolute;
+        box-shadow: 2px 15px 15px rgba(0, 0, 0, 0.2);
+        border-radius: 12px;
+        padding: 15px;
+        width: 285px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        margin-top: 10px;
+        margin-left: -15px;
 
-.good-card .up .bottom {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    z-index: 2;
-}
+        .property {
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 20px;
+        }
+    }
 
-.good-card .up .bottom .good-category {
-    font-weight: 100;
-}
+    &:hover {
+        background-color: rgb(211, 211, 211);
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
 
-.good-card .up .bottom .good-cost {
-    font-weight: 500;
-    color: rgb(192, 25, 25);
-}
+        .up {
+            .wrap-img {
+                .good-img {
+                    display: none;
+                }
 
-.good-card .down {
-    position: absolute;
-    box-shadow: 2px 15px 15px rgba(0, 0, 0, 0.2);
-    border-radius: 12px;
-    padding: 15px;
-    width: 285px;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    margin-top: 10px;
-    margin-left: -15px;
-}
+                .good-img2 {
+                    display: flex;
+                }
+            }
+        }
 
-.good-card .down .property {
-    font-size: 14px;
-    font-weight: 300;
-    line-height: 20px;
+        .down {
+            visibility: visible;
+            transform: translateY(0);
+            background-color: rgb(211, 211, 211);
+        }
+    }
+
 }
 
 @media screen and (max-width: 640px) {
@@ -106,7 +112,7 @@
         margin-right: 0;
     }
 
-    .good-card .up .good-category{
+    .good-card .up .good-category {
         font-size: 14px;
     }
 
@@ -120,7 +126,7 @@
         max-height: 130px;
     }
 
-    .good-card .up .good-cost{
+    .good-card .up .good-cost {
         font-size: 16px;
     }
 

@@ -35,6 +35,7 @@ export class AddProductPage {
         }
     };
     imageProduct: IImageProduct[] = [];
+    fileUploadStates: boolean;
 
     constructor(
         public categoryService: CategoryService,
@@ -47,15 +48,19 @@ export class AddProductPage {
             this.categories = category
         })
     }
+    async addProduct(productData: ICreateProduct) {
+        this.files.forEach(element => {
+            this.fileUploadStates = true;
+        });
 
-    addProduct(productData: ICreateProduct) {
-
-        const formData = new FormData()
+        var formData = new FormData()
 
         for (const dropped of this.files) {
             const fileEntry = dropped.fileEntry as FileSystemFileEntry;
-            fileEntry.file((file: File) => {
-                formData.append('file', file, dropped.relativePath)
+            const file = await this.getFileFromEntry(fileEntry); // Await for the file
+            formData.append('file', file, dropped.relativePath);
+            this.files.forEach(element => {
+                this.fileUploadStates = false;
             });
         }
 
@@ -65,10 +70,17 @@ export class AddProductPage {
         });
 
         this.productData.images = this.imageProduct;
+        this.productsService.addImg(formData).subscribe();
+        this.productsService.addProduct(productData).subscribe();
+    }
 
-        console.log(formData);
+    async getFileFromEntry(fileEntry: FileSystemFileEntry): Promise<File> {
+        return new Promise((resolve) => {
+            fileEntry.file((file: File) => {
+                resolve(file);
+            });
 
-        this.productsService.addProduct(formData).subscribe();
+        });
     }
 
     public files: NgxFileDropEntry[] = [];
@@ -91,10 +103,9 @@ export class AddProductPage {
                     if (!(extension && validExtensions.includes('.' + extension))) {
                         console.log("invalid file: must be .jpg")
                     }
+                    const uniqueName = this.generateUniqueFileName(fileEntry.name);
 
-                    //const uniqueName = this.generateUniqueFileName(fileEntry.name);
-
-                    //file.relativePath = uniqueName;
+                    file.relativePath = uniqueName;
 
                     return extension && validExtensions.includes('.' + extension);
                 }

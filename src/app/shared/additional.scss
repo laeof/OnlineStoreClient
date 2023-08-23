@@ -9,17 +9,72 @@
     display: flex;
     justify-content: center;
     width: 90%;
+
+    .another-product {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .nav {
+            display: flex;
+            justify-content: center;
+            width: 70%;
+
+            .goods {
+                display: flex;
+                justify-content: space-around;
+                width: 100%;
+                flex-wrap: wrap;
+
+                .good-card {
+                    width: 170px;
+                    padding: 8px;
+
+                    .up {
+                        .good-name {
+                            font-size: 16px;
+                            margin-right: 0;
+                            height: 30px;
+                        }
+
+                        .good-category {
+                            font-size: 14px;
+                        }
+
+                        .wrap-img {
+                            height: 130px;
+
+                            .good-img,
+                            .good-img2 {
+                                max-width: 155px;
+                                max-height: 130px;
+                            }
+                        }
+
+                        .good-cost {
+                            font-size: 16px;
+                        }
+                    }
+
+                    .down {
+                        width: 170px;
+                        padding: 8px;
+                        margin-left: -8px;
+                        margin-top: 2px;
+
+                        .property {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 .additional-section .additional .title {
     font-size: 24px;
-}
-
-.additional-section .additional .another-product {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .additional-section .additional .wrap-rate {
@@ -28,62 +83,12 @@
     justify-content: center;
 }
 
-.additional-section .another-product .nav {
-    display: flex;
-    justify-content: center;
-    width: 70%;
-}
-
-.additional-section .another-product .nav .goods {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    flex-wrap: wrap;
-}
-
-.additional-section .good-card {
-    width: 170px;
-    padding: 8px;
-}
-
-.additional-section .good-card .up .good-name {
-    font-size: 16px;
-    margin-right: 0;
-}
-
-.additional-section .good-card .up .good-category {
-    font-size: 14px;
-}
-
-.additional-section .good-card .up .wrap-img{
-    height: 130px;
-}
-
-.additional-section .good-card .up .good-img,
-.additional-section .good-card .up .good-img2 {
-    max-width: 155px;
-    max-height: 130px;
-}
-
-.additional-section .good-card .up .good-cost {
-    font-size: 16px;
-}
-
-.additional-section .good-card .down {
-    width: 170px;
-    padding: 8px;
-    margin-left: -8px;
-    margin-top: 2px;
-}
-
-.additional-section .good-card .down .property {
-    font-size: 12px;
-}
 
 @media screen and (max-width: 1600px) {
     .additional-section .another-product .nav {
         width: 80%;
     }
+
     .additional-section .additional {
         width: 95%;
     }
@@ -101,7 +106,7 @@
     }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
     .additional-section .additional {
         display: flex;
         flex-direction: column;

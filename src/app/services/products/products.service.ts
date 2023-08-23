@@ -1,9 +1,10 @@
 import { Injectable } from "@angular/core"
 import { HttpClient, HttpHeaders } from "@angular/common/http"
 import { Observable } from "rxjs"
-import { IAddProduct, ICreateProduct, IProduct } from "../../models/products"
+import { ICreateProduct, IProduct } from "../../models/products"
 import { AuthService } from "../auth/auth.service";
 import { ApiService } from "../api/api.service";
+import { NgxFileDropEntry } from "ngx-file-drop";
 
 @Injectable({
     providedIn: 'root'
@@ -23,16 +24,13 @@ export class ProductsService {
     getById(id: string): Observable<IProduct> {
         return this.http.get<IProduct>(this.apiUrl + 'api/goods/product/' + id)
     }
-    model: IAddProduct = {
-        product: null,
-        formData: null,
+    addProduct(productData: ICreateProduct) {
+        return this.http.post<ICreateProduct>(this.apiUrl + `api/goods/create`, productData);
     }
-    addProduct(formData: FormData) {
+    addImg(formData: FormData) {
         const headers = new HttpHeaders({
             'enctype': 'multipart/form-data',
-            'security-token': 'mytoken'
         });
-        return this.http.post(this.apiUrl + `api/goods/create`, formData, { headers: headers, responseType: 'blob' })
-        //return this.http.post(this.apiUrl + `api/goods/create`, formData, { headers });
+        return this.http.post(this.apiUrl + `api/goods/uploadimg`, formData, { headers: headers });
     }
 }

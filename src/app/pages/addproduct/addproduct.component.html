@@ -22,7 +22,7 @@
             <div class="ngx-file-drop-wrap">
                 <ngx-file-drop dropZoneClassName="ngx-file-drop" (onFileOver)="fileOver($event)"
                     (onFileLeave)="fileLeave($event)" (onFileDrop)="fileDrop($event)">
-                    <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector" > 
+                    <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
                         <div class="file-info">
                             <div class="file-drop">
                                 <p class="file-drop-message">Завантажте або перетягніть сюди 2 або більше файлів (.jpg)
@@ -32,7 +32,14 @@
                             </div>
                             <div class="files" *ngIf="files != null && files.length > 0">
                                 <ul>
-                                    <li *ngFor="let file of files">{{ file.relativePath }}</li>
+                                    <li *ngFor="let file of files">
+                                        <div>
+                                            {{ file.relativePath }}
+                                        </div>
+                                        <div class="loading-animation" *ngIf="fileUploadStates">
+                                            Uploading...
+                                        </div>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
