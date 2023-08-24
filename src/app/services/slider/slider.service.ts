@@ -13,7 +13,7 @@ export class SliderService {
   private readonly INTERVAL = 5000; // Интервал автоматической прокрутки
 
   constructor() {
-    this.startAutoSlide();
+    
   }
 
   getCurrentSlide() {

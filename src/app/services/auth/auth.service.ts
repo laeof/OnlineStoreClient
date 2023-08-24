@@ -27,9 +27,6 @@ export class AuthService {
         this.apiUrl = apiServce.getApiUrl() + 'api/account/';
         this.isLoggedIn().subscribe(isLoggedIn => {
             this.isAuthenticatedSubject.next(isLoggedIn)
-            if(!isLoggedIn){
-                this.logout().subscribe();
-            }
         });
     }
 
@@ -61,6 +58,17 @@ export class AuthService {
     }
 
     isLoggedIn(): Observable<boolean> {
-        return this.http.get<boolean>(this.apiUrl + `check-auth`, requestOptions);
+        return this.http.get<boolean>(this.apiUrl + `check-auth`, requestOptions)
+        .pipe (
+            tap(response => {
+                
+            }),
+            catchError(error => {
+                if (error.status === 401) {
+                    this.logout().subscribe()
+                }
+                throw error;
+            })
+        );
     }
 }

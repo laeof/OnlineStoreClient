@@ -9,7 +9,7 @@ import { SliderService } from 'src/app/services/slider/slider.service';
 })
 
 export class SliderComponent {
-    @ViewChild('slidesContainer', { static: true }) slidesContainer!: ElementRef;
+    @ViewChild('slidesContainer', { static: false }) slidesContainer!: ElementRef;
 
     constructor(public sliderService: SliderService, public apiService: ApiService) {
         this.picUrl = apiService.getApiUrl();
@@ -20,6 +20,7 @@ export class SliderComponent {
         this.sliderService.showSlide(this.sliderService.getCurrentSlide());
         this.sliderService.updateActiveDot();
         this.sliderService.updateActiveThumb();
+        this.sliderService.startAutoSlide();
     }
 
     prevSlide(): void {

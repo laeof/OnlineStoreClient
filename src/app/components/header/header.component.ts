@@ -33,7 +33,7 @@ export class HeaderComponent {
     categories: ICategory[]
     picUrl: string;
     redirectToHome(): void {
-        this.router.navigate(['/']);
+        window.location.href = `/`;
     }
 
     redirectToCatalog() {

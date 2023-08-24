@@ -29,6 +29,10 @@ import { CategoryComponent } from './components/category/category.component';
 import { CategoryPage } from './pages/category/categorypage.component';
 import { AddProductPage } from './pages/addproduct/addproduct.component';
 import { NgxFileDropModule } from 'ngx-file-drop';
+import { CharacteristicsComponent } from './components/characteristics/characteristics.component';
+import { ProductCharacteristicsPage } from './pages/productcharacteristics/productcharacteristics.component';
+import { ProductNameNavComponent } from './components/productnameandnavigation/productnameandnavigation.component';
+import { ProductReviewsPage } from './pages/productreviews/productreviews.component';
 
 const maskConfigFunction: () => Partial<IConfig> = () => {
   return {
@@ -47,6 +51,10 @@ const maskConfigFunction: () => Partial<IConfig> = () => {
     RateComponent,
     BannersComponent,
     ProductsComponent,
+    CharacteristicsComponent,
+    ProductCharacteristicsPage,
+    ProductReviewsPage,
+    ProductNameNavComponent,
     BlogComponent,
     SidebarComponent,
     LoginComponent,

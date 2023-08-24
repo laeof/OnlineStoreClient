@@ -29,6 +29,6 @@ export class ProductsComponent implements OnInit {
     }
     picUrl: string;
     redirectToProduct(productId: string): void {
-        this.router.navigate(['/Product', productId]);
+        window.location.href = `/Product/${productId}`;
     }
 }
