@@ -5,6 +5,7 @@ import { ICreateProduct, IProduct } from "../../models/products"
 import { AuthService } from "../auth/auth.service";
 import { ApiService } from "../api/api.service";
 import { NgxFileDropEntry } from "ngx-file-drop";
+import { ICart } from "src/app/models/cart";
 
 @Injectable({
     providedIn: 'root'
@@ -32,5 +33,8 @@ export class ProductsService {
             'enctype': 'multipart/form-data',
         });
         return this.http.post(this.apiUrl + `api/goods/uploadimg`, formData, { headers: headers });
+    }
+    addtocart(cart: ICart) {
+        return this.http.post(this.apiUrl + `api/cart/addtocart`, cart);
     }
 }

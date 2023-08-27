@@ -15,6 +15,7 @@ import { UserService } from 'src/app/services/user/user.service'
 
 export class CabinetPage {
     user: IUser = {
+        id: null,
         firstName: null,
         lastName: null,
         email: null,

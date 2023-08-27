@@ -26,7 +26,7 @@
                 </span>
                 <div class="cost">
                     <p class="good-cost">{{product.price}} ₴</p>
-                    <div class="good-buy">
+                    <div class="good-buy" (click)="addToCart()">
                         <button class="button gray">
                             <img src="{{picUrl}}img/svg/basket.svg" class="icon">Придбати
                         </button>

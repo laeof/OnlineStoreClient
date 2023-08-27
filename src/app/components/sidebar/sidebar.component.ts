@@ -13,6 +13,7 @@ import { UserService } from 'src/app/services/user/user.service';
 
 export class SidebarComponent {
     user: IUser = {
+        id: null,
         email: null,
         firstName: null,
         lastName: null,
