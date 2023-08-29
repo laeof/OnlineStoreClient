@@ -10,6 +10,8 @@ export interface IProduct {
     isNew: boolean
     isDeleted: boolean
     categoryId: string
+    clickCount: number
+    date: Date | null,
     images: IImageProduct[]
 }
 
@@ -40,5 +42,5 @@ export interface ICreateProduct {
     categoryId: string,
     images: IImageProduct[] | null,
     monitor: IMonitor,
-    keyboard: IKeyboard
+    keyboard: IKeyboard,
 }

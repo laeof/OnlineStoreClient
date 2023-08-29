@@ -1,0 +1,11 @@
+@import "./components/main.scss";
+
+.cabinet-sidebar {
+    .cabinet-list {
+        .cabinet-item-picture {
+            svg {
+                margin-right: 15px;
+            }
+        }
+    }
+}

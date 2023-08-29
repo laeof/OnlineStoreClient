@@ -1,0 +1,164 @@
+<section class="cabinet-section">
+    <div class="cabinet">
+        <app-cabinet [user]="user">
+
+        </app-cabinet>
+
+        <div class="cabinet-info">
+            <nav class="cabinet-info-nav">
+                <ul class="cabinet-info-list">
+                    <li class="cabinet-info-item">
+                        <p class="title">Особисті дані</p>
+                    </li>
+                    <li class="cabinet-info-item">
+                        <div class="cabinet-info-title">
+                            <div class="info-title">
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs"
+                                    width="25" height="25" x="0" y="0" viewBox="0 0 512 512"
+                                    style="enable-background:new 0 0 20 20" xml:space="preserve" class="">
+                                    <g>
+                                        <path
+                                            d="M437.02 330.98c-27.883-27.882-61.071-48.523-97.281-61.018C378.521 243.251 404 198.548 404 148 404 66.393 337.607 0 256 0S108 66.393 108 148c0 50.548 25.479 95.251 64.262 121.962-36.21 12.495-69.398 33.136-97.281 61.018C26.629 379.333 0 443.62 0 512h40c0-119.103 96.897-216 216-216s216 96.897 216 216h40c0-68.38-26.629-132.667-74.98-181.02zM256 256c-59.551 0-108-48.448-108-108S196.449 40 256 40s108 48.448 108 108-48.449 108-108 108z"
+                                            fill="#000" data-original="#000000"></path>
+                                    </g>
+                                </svg>
+                                <p class="">Особисті дані</p>
+                            </div>
+                            <div class="arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs"
+                                    width="20" height="15" x="0" y="0" viewBox="0 0 492.004 492.004"
+                                    style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+                                    <g>
+                                        <path
+                                            d="M382.678 226.804 163.73 7.86C158.666 2.792 151.906 0 144.698 0s-13.968 2.792-19.032 7.86l-16.124 16.12c-10.492 10.504-10.492 27.576 0 38.064L293.398 245.9l-184.06 184.06c-5.064 5.068-7.86 11.824-7.86 19.028 0 7.212 2.796 13.968 7.86 19.04l16.124 16.116c5.068 5.068 11.824 7.86 19.032 7.86s13.968-2.792 19.032-7.86L382.678 265c5.076-5.084 7.864-11.872 7.848-19.088.016-7.244-2.772-14.028-7.848-19.108z"
+                                            fill="#000000" data-original="#000000"></path>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="cabinet-info-item-list">
+                            <ul>
+                                <li class="cabinet-info-item-list-item">
+                                    <label for="">Ім'я</label>
+                                    <input readonly class="cabinet-info-input" value="{{this.user.firstName}}" />
+                                </li>
+                                <li class="cabinet-info-item-list-item">
+                                    <label for="">Прізвище</label>
+                                    <input readonly class="cabinet-info-input" value="{{this.user.lastName}}" />
+                                </li>
+
+                                <li class="cabinet-info-item-list-item">
+                                    <label for="">Стать</label>
+                                    <select class="cabinet-info-input" value="{{this.user.gender}}">
+                                        <option value="">Не вказано</option>
+                                        <option value="male">Чоловіча</option>
+                                        <option value="female">Жіноча</option>
+                                    </select>
+                                </li>
+                            </ul>
+                            <div class="buttons">
+                                <button class="button white">Редагувати</button>
+                                <button class="button green">Змінити</button>
+                                <button class="button red">Скасувати</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cabinet-info-item">
+                        <div class="cabinet-info-title">
+                            <div class="info-title">
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs"
+                                    width="25" height="25" x="0" y="0" viewBox="0 0 512 512"
+                                    style="enable-background:new 0 0 20 20" xml:space="preserve" class="">
+                                    <g>
+                                        <path
+                                            d="M437.02 330.98c-27.883-27.882-61.071-48.523-97.281-61.018C378.521 243.251 404 198.548 404 148 404 66.393 337.607 0 256 0S108 66.393 108 148c0 50.548 25.479 95.251 64.262 121.962-36.21 12.495-69.398 33.136-97.281 61.018C26.629 379.333 0 443.62 0 512h40c0-119.103 96.897-216 216-216s216 96.897 216 216h40c0-68.38-26.629-132.667-74.98-181.02zM256 256c-59.551 0-108-48.448-108-108S196.449 40 256 40s108 48.448 108 108-48.449 108-108 108z"
+                                            fill="#000" data-original="#000000"></path>
+                                    </g>
+                                </svg>
+                                <p class="">Контакти</p>
+                            </div>
+                            <div class="arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs"
+                                    width="20" height="15" x="0" y="0" viewBox="0 0 492.004 492.004"
+                                    style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+                                    <g>
+                                        <path
+                                            d="M382.678 226.804 163.73 7.86C158.666 2.792 151.906 0 144.698 0s-13.968 2.792-19.032 7.86l-16.124 16.12c-10.492 10.504-10.492 27.576 0 38.064L293.398 245.9l-184.06 184.06c-5.064 5.068-7.86 11.824-7.86 19.028 0 7.212 2.796 13.968 7.86 19.04l16.124 16.116c5.068 5.068 11.824 7.86 19.032 7.86s13.968-2.792 19.032-7.86L382.678 265c5.076-5.084 7.864-11.872 7.848-19.088.016-7.244-2.772-14.028-7.848-19.108z"
+                                            fill="#000000" data-original="#000000"></path>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="cabinet-info-item-list">
+                            <ul>
+                                <li class="cabinet-info-item-list-item">
+                                    <label for="">Телефон</label>
+                                    <input readonly class="cabinet-info-input" value="{{this.user.phoneNumber}}" />
+                                </li>
+                                <li class="cabinet-info-item-list-item">
+                                    <label for="">Електронна пошта</label>
+                                    <input readonly class="cabinet-info-input" value="{{this.user.email}}" />
+                                </li>
+                            </ul>
+                            <div class="buttons">
+                                <button class="button white">Редагувати</button>
+                                <button class="button green">Змінити</button>
+                                <button class="button red">Скасувати</button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="cabinet-info-item">
+                        <div class="cabinet-info-title">
+                            <div class="info-title">
+                                <svg class="icon" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs"
+                                    width="25" height="25" x="0" y="0" viewBox="0 0 512 512"
+                                    style="enable-background:new 0 0 20 20" xml:space="preserve" class="">
+                                    <g>
+                                        <path
+                                            d="M437.02 330.98c-27.883-27.882-61.071-48.523-97.281-61.018C378.521 243.251 404 198.548 404 148 404 66.393 337.607 0 256 0S108 66.393 108 148c0 50.548 25.479 95.251 64.262 121.962-36.21 12.495-69.398 33.136-97.281 61.018C26.629 379.333 0 443.62 0 512h40c0-119.103 96.897-216 216-216s216 96.897 216 216h40c0-68.38-26.629-132.667-74.98-181.02zM256 256c-59.551 0-108-48.448-108-108S196.449 40 256 40s108 48.448 108 108-48.449 108-108 108z"
+                                            fill="#000" data-original="#000000"></path>
+                                    </g>
+                                </svg>
+                                <p class="">Акаунт</p>
+                            </div>
+                            <div class="arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs"
+                                    width="20" height="15" x="0" y="0" viewBox="0 0 492.004 492.004"
+                                    style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+                                    <g>
+                                        <path
+                                            d="M382.678 226.804 163.73 7.86C158.666 2.792 151.906 0 144.698 0s-13.968 2.792-19.032 7.86l-16.124 16.12c-10.492 10.504-10.492 27.576 0 38.064L293.398 245.9l-184.06 184.06c-5.064 5.068-7.86 11.824-7.86 19.028 0 7.212 2.796 13.968 7.86 19.04l16.124 16.116c5.068 5.068 11.824 7.86 19.032 7.86s13.968-2.792 19.032-7.86L382.678 265c5.076-5.084 7.864-11.872 7.848-19.088.016-7.244-2.772-14.028-7.848-19.108z"
+                                            fill="#000000" data-original="#000000"></path>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="cabinet-info-item-list">
+                            <ul>
+                                <li class="cabinet-info-item-list-item">
+                                    <label for="">Електронна пошта</label>
+                                    <input readonly class="cabinet-info-input" value="{{this.user.email}}" />
+                                </li>
+                                <li class="cabinet-info-item-list-item">
+                                    <label for="">Пароль</label>
+                                    <input readonly class="cabinet-info-input" />
+                                </li>
+                            </ul>
+                            <div class="buttons">
+                                <button class="button white">Редагувати</button>
+                                <button class="button green">Змінити</button>
+                                <button class="button red">Скасувати</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>

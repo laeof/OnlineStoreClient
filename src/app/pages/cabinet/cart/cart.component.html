@@ -1,0 +1,56 @@
+<section class="cabinet-section">
+    <div class="cabinet">
+        <app-cabinet [user]="user">
+
+        </app-cabinet>
+
+        <div class="cabinet-info">
+            <nav class="cabinet-info-nav">
+                <ul class="cabinet-info-list">
+                    <li class="cabinet-info-item">
+                        <p class="title">Кошик</p>
+                    </li>
+                    <li class="cabinet-info-item">
+                        <ul class="cart">
+                            <li class="emptycart" *ngIf="cartItems.length === 0">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs"
+                                    width="256" height="256" x="0" y="0" viewBox="0 0 24 24"
+                                    style="enable-background:new 0 0 512 512" xml:space="preserve" class="">
+                                    <g>
+                                        <path
+                                            d="M20 17.25H8.43l-.19-1.58 12.11-.95c.82-.07 1.49-.7 1.6-1.52l.14-1.1a.753.753 0 0 0-.65-.84.748.748 0 0 0-.84.65l-.14 1.1a.23.23 0 0 1-.23.21l-12.17.96-.87-7.42h4.8c.41 0 .75-.34.75-.75s-.34-.75-.75-.75H7.01L6.9 4.3a2.766 2.766 0 0 0-2.06-2.35l-2.66-.67c-.4-.1-.81.14-.91.55-.1.4.14.81.55.91l2.66.67c.5.12.88.55.94 1.07l1.53 13c-.99.41-1.7 1.4-1.7 2.54 0 1.52 1.23 2.75 2.75 2.75s2.75-1.23 2.75-2.75c0-.45-.12-.87-.31-1.25h7.13c-.19.38-.31.8-.31 1.25 0 1.52 1.23 2.75 2.75 2.75s2.75-1.23 2.75-2.75-1.23-2.75-2.75-2.75zM9.25 20a1.25 1.25 0 1 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM20 21.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zM15.97 7.97 17.94 6l-1.97-1.97c-.29-.29-.29-.77 0-1.06s.77-.29 1.06 0L19 4.94l1.97-1.97c.29-.29.77-.29 1.06 0s.29.77 0 1.06L20.06 6l1.97 1.97c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22s-.38-.07-.53-.22L19 7.06l-1.97 1.97c-.15.15-.34.22-.53.22s-.38-.07-.53-.22a.754.754 0 0 1 0-1.06z"
+                                            fill="#000000" data-original="#000000"></path>
+                                    </g>
+                                </svg>
+                                <h2 class="title">Ваш кошик порожній</h2>
+                                <p class="subtitle">Але це ніколи не пізно виправити :)</p>
+                            </li>
+
+                            <li class="productincart" *ngFor="let item of cartItems;">
+                                <div class="img"
+                                    *ngIf="item && item.product && item.product.images && item.product.images[0]">
+                                    <img src="{{picUrl}}img/goods/{{item?.product?.images?.[0]?.fileName}}">
+                                </div>
+                                <div class="name">
+                                    <p class="prodname">{{item?.product?.name}}</p>
+                                </div>
+                                <div class="addormin">
+                                    <p class="add" (click)="minusfromcart(item)">-</p>
+                                    <p class="count">{{item?.productAmount}}</p>
+                                    <p class="add" (click)="addcartitem(item)">+</p>
+                                </div>
+                                <div class="last">
+                                    <div class="lastdiv">
+                                        <p class="delete" (click)="deletefromcart(item)">X</p>
+                                        <p class="price">{{item?.product?.price}}₴</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>

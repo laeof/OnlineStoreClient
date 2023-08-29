@@ -13,7 +13,7 @@ export class SliderService {
   private readonly INTERVAL = 5000; // Интервал автоматической прокрутки
 
   constructor() {
-    
+
   }
 
   getCurrentSlide() {
@@ -22,8 +22,9 @@ export class SliderService {
 
   showSlide(slideIndex: number): void {
     const slidesContainer = document.querySelector('.slides') as HTMLElement;
+    const slides = document.querySelectorAll('.slides .product-img-wrap');
     if (slidesContainer) {
-      slidesContainer.style.transform = `translateX(-${slideIndex * 100}%)`;
+      slidesContainer.style.transform = `translateX(-${slideIndex * ((1 / slides.length) * 100)}%)`;
     }
   }
 
@@ -50,13 +51,13 @@ export class SliderService {
   }
 
   nextSlide(): void {
-    const slides = document.querySelectorAll('.slides img');
+    const slides = document.querySelectorAll('.slides .product-img-wrap');
     this.currentSlide = (this.currentSlide + 1) % slides.length;
     this.showSlide(this.currentSlide);
   }
 
   prevSlide(): void {
-    const slides = document.querySelectorAll('.slides img');
+    const slides = document.querySelectorAll('.slides .product-img-wrap');
     this.currentSlide = (this.currentSlide - 1 + slides.length) % slides.length;
     this.showSlide(this.currentSlide);
   }
@@ -92,7 +93,7 @@ export class SliderService {
     const touch = event.touches[0];
     const touchMoveX = touch.clientX;
     const deltaX = touchMoveX - this.touchStartX;
-    const slides = document.querySelectorAll('.slides img');
+    const slides = document.querySelectorAll('.slides .product-img-wrap');
 
     if (
       (this.currentSlide === 0 && deltaX > 0) ||

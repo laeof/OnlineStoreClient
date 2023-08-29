@@ -1,0 +1,97 @@
+@import "../personalinfo/personalinfo.component.scss";
+
+.cabinet-info {
+    .cabinet-info-nav {
+        .cabinet-info-list {
+            .cabinet-info-item {
+                .cart {
+                    .emptycart {
+                        display: flex;
+                        justify-content: center;
+                        flex-direction: column;
+                        align-items: center;
+                        .title {
+                            font-size: 35px;
+                            font-weight: 600;
+                        }
+                        .subtitle {
+                            color: rgb(160,160,160);
+                            font-weight: 500;
+                        }
+                    }
+                    .productincart {
+                        display: flex;
+                        margin-top: 10px;
+                        border: 1px solid rgba(0, 0, 0, 0.1);
+                        border-radius: 20px;
+                        padding: 15px;
+
+                        &:hover {
+                            background-color: rgba(0, 0, 0, 0.1);
+                        }
+
+                        .img {
+                            width: 225px;
+                            display: flex;
+                            justify-content: center;
+
+                            img {
+                                max-width: 200px;
+                                max-height: 120px;
+                            }
+                        }
+
+                        .name {
+                            margin-top: 5px;
+                            width: 300px;
+
+                            .prodname {
+                                font-size: 18px;
+                            }
+                        }
+
+                        .addormin {
+                            width: 100px;
+                            display: flex;
+                            font-size: 30px;
+                            justify-content: space-around;
+                            align-items: flex-end;
+
+                            .add {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                border: 1px solid rgba(0, 0, 0, 0.1);
+                                width: 30px;
+                                height: 30px;
+                                cursor: pointer;
+
+                                &:hover {
+                                    background-color: rgba(0, 0, 0, 0.1);
+                                }
+                            }
+                            .count {
+                                font-size: 25px;
+                            }
+                        }
+
+                        .last {
+                            display: flex;
+                            width: 200px;
+                            justify-content: flex-end;
+                            font-weight: 500;
+                            font-size: 20px;
+
+                            .lastdiv {
+                                display: flex;
+                                flex-direction: column;
+                                text-align: center;
+                                justify-content: space-between;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

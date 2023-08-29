@@ -46,11 +46,11 @@ export class HeaderComponent {
     }
 
     redirectToCabinet(): void {
-        this.router.navigate(['/Cabinet']);
+        this.router.navigate(['/Cabinet/PersonalInfo']);
     }
 
     redirectToCart(): void {
-        this.router.navigate(['/Cart']);
+        this.router.navigate(['/Cabinet/Cart']);
     }
 
     redirectToAdmin(): void {

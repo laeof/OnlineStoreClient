@@ -1,3 +1,18 @@
-﻿.banners-section .nav {
-    flex-direction: column;
+﻿.banners-section {
+    .nav {
+        width: 55%;
+        flex-direction: column;
+        border-radius: 12px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        .app-slider {
+            width: 1000px;
+            .product-img-wrap {
+                width: 1000px;
+                img {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
 }

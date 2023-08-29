@@ -1,11 +1,23 @@
 <section class="section banners-section">
     <h2 class="title">Акції</h2>
-    <nav class="nav">
-        <app-slider>
-            <img class="banner-img" src="{{picUrl}}img/jpg/ban1.jpg">
-            <img class="banner-img" src="{{picUrl}}img/jpg/ban2.jpg">
-            <img class="banner-img" src="{{picUrl}}img/jpg/ban3.jpg">
-            <img class="banner-img" src="{{picUrl}}img/jpg/ban4.jpg">
+    
+    <app-loading class="loading" *ngIf="loading">
+
+    </app-loading>
+    <nav class="nav" *ngIf="!loading">
+        <app-slider class="app-slider">
+            <div class="product-img-wrap">
+                <img class="banner-img" src="{{picUrl}}img/jpg/ban1.jpg">
+            </div>
+            <div class="product-img-wrap">
+                <img class="banner-img" src="{{picUrl}}img/jpg/ban2.jpg">
+            </div>
+            <div class="product-img-wrap">
+                <img class="banner-img" src="{{picUrl}}img/jpg/ban3.jpg">
+            </div>
+            <div class="product-img-wrap">
+                <img class="banner-img" src="{{picUrl}}img/jpg/ban4.jpg">
+            </div>
         </app-slider>
         <ul class="dots">
             <li class="dot"></li>

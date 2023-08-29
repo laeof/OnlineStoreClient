@@ -1,0 +1,178 @@
+.cabinet-section {
+    display: flex;
+    justify-content: center;
+
+    svg {
+        margin-right: 10px;
+    }
+
+    .cabinet {
+        display: flex;
+        width: 65%;
+
+        .cabinet-info {
+            width: 100%;
+            padding-left: 10px;
+
+            .title {
+                text-align: left;
+                margin-top: 15px;
+                margin-bottom: 0;
+            }
+
+            .cabinet-info-nav {
+                .cabinet-info-list {
+                    .cabinet-info-item {
+                        .cabinet-info-title {
+                            display: flex;
+                            justify-content: space-between;
+                            padding: 20px;
+                            cursor: pointer;
+                            border-radius: 12px;
+                            transition: background-color 0.3s;
+                            border: 1px rgba(0, 0, 0, 0.2) solid;
+                            margin-top: 10px;
+
+                            .info-title {
+                                display: flex;
+                            }
+
+                            .arrow {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                transform: rotate(90deg);
+
+                                svg {
+                                    height: 15px;
+                                    width: 15px;
+                                    margin-right: 0;
+                                }
+                            }
+
+                            .info-title {
+                                display: flex;
+                                align-items: center;
+                            }
+                        }
+
+                        .cabinet-info-title:hover {
+                            background-color: rgba(0, 0, 0, 0.1);
+                        }
+
+                        .cabinet-info-item-list {
+                            padding: 20px;
+                            display: none;
+                            width: 100%;
+
+                            ul {
+                                display: flex;
+                                flex-wrap: wrap;
+                            }
+
+                            .buttons {
+                                display: flex;
+                                flex-wrap: wrap;
+
+                                .button.white,
+                                .button.red,
+                                .button.green {
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    padding: 25px;
+                                    width: 150px;
+                                    border-radius: 12px;
+                                    margin-right: 10px;
+                                    margin-bottom: 10px;
+                                }
+
+                                .button.red,
+                                .button.green {
+                                    display: none
+                                }
+
+                                .button.white {
+                                    border: 1px solid rgba(0, 0, 0, 0.1);
+                                }
+                            }
+
+                            .cabinet-info-item-list-item {
+                                display: flex;
+                                flex-direction: column;
+                                margin-right: 10px;
+                                margin-bottom: 10px;
+
+                                .cabinet-info-input {
+                                    padding: 10px;
+                                    outline: none;
+                                    border: none;
+                                    width: 220px;
+                                    height: 50px;
+                                    font-size: 18px;
+                                    pointer-events: none;
+                                    -webkit-appearance: none;
+                                    -moz-appearance: none;
+                                    appearance: none;
+                                    position: relative;
+                                }
+                            }
+                        }
+
+                        .cabinet-info-item-list.active.edit {
+                            .button.white {
+                                display: none;
+                            }
+
+                            .button.red,
+                            .button.green {
+                                display: flex;
+                            }
+
+                            .cabinet-info-input.active {
+                                border: 2px solid rgba(0, 0, 0, 0.1);
+                                border-radius: 12px;
+                                pointer-events: initial;
+                            }
+                        }
+
+                        .cabinet-info-title.active {
+                            .arrow {
+                                transform: rotate(270deg);
+                            }
+                        }
+
+                        .cabinet-info-item-list.active {
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .cabinet .icon {
+        margin-right: 15px;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .cabinet {
+        display: flex;
+        width: 85%;
+    }
+}
+
+@media screen and (max-width: 1366px) {
+    .cabinet {
+        display: flex;
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .cabinet {
+        display: flex;
+        width: 95%;
+    }
+}

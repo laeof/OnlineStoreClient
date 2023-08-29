@@ -4,9 +4,12 @@
 
 <section class="section goods-section">
     <h2 class="title">Новинки</h2>
-    <nav class="nav">
+    <app-loading class="loading" *ngIf="loading">
+
+    </app-loading>
+    <nav class="nav" *ngIf="!loading">
         <ul class="goods">
-            <app-products *ngFor="let product of products; let i = index" [product]="product">
+            <app-products *ngFor="let product of novelties; let i = index" [product]="product">
 
             </app-products>
         </ul>
@@ -15,9 +18,12 @@
 
 <section class="section goods-section">
     <h2 class="title">Популярні товари</h2>
-    <nav class="nav">
+    <app-loading class="loading" *ngIf="loading">
+
+    </app-loading>
+    <nav class="nav" *ngIf="!loading">
         <ul class="goods">
-            <app-products *ngFor="let product of products; let i = index" [product]="product">
+            <app-products *ngFor="let product of popular; let i = index" [product]="product">
 
             </app-products>
         </ul>

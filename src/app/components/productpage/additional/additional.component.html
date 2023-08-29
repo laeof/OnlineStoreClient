@@ -1,0 +1,17 @@
+<section class="section additional-section">
+    <div class="additional">
+        <div class="another-product">
+            <h2 class="title">Також вас можуть зацікавити</h2>
+            <nav class="nav">
+                <ul class="goods">
+                    <app-products *ngFor="let product of products; let i = index" [product]="product">
+                        
+                    </app-products>
+                </ul>
+            </nav>
+        </div>
+        <app-rate class="wrap-rate">
+            
+        </app-rate>
+    </div>
+</section>
