@@ -1,0 +1,70 @@
+.chars-section-wrap {
+    display: flex;
+    justify-content: center;
+
+    .chars-section {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 30px;
+        width: 90%;
+
+        .chars {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-left: 70px;
+
+            .title {
+                text-align: left;
+                width: 70%;
+            }
+
+            .characteristic {
+                width: 70%;
+                display: flex;
+                margin-top: 10px;
+                line-height: 30px;
+
+                .char {
+                    width: 75%;
+                    font-size: 20px;
+                    font-weight: 400;
+                    border-bottom: 1px dotted #000;
+                    text-transform: capitalize;
+                }
+
+                .value {
+                    width: 50%;
+                    border-bottom: 1px dotted #000;
+                }
+            }
+
+        }
+
+        .app-buy-info {
+            width: 50%;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .chars-section-wrap {
+        .chars-section {
+            flex-direction: column;
+            align-items: center;
+
+            .chars {
+                width: 100%;
+                padding-left: 0;
+            }
+
+            .app-buy-info {
+                margin-top: 30px;
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+        }
+    }
+}

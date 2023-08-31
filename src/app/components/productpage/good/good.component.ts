@@ -21,26 +21,8 @@ export class GoodComponent implements OnInit {
         this.picUrl = apiService.getApiUrl();
     }
     ngOnInit(): void {
-        this.userService.getUser().subscribe((response) => {
-            this.Cart.userId = response.id;
-        });
-    }
-    Cart: ICart = {
-        productId: '',
-        userId: '',
-        cartItems: [],
+        
     }
     picUrl: string;
     @Input() product: IProduct;
-
-    addToCart() {
-        this.Cart.productId = this.product.id;
-        this.productService.addtocart(this.Cart).subscribe(response => {
-            this.redirectToCart();
-        });
-    }
-
-    redirectToCart() {
-        this.router.navigate(['/Cabinet/Cart']);
-    }
 }

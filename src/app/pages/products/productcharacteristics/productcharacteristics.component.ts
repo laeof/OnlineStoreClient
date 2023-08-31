@@ -33,7 +33,9 @@ export class ProductCharacteristicsPage implements OnInit {
         imgPath: '',
         products: []
     };
-    constructor(private productsService: ProductsService, private route: ActivatedRoute, private categoryService: CategoryService) { }
+    constructor(private productsService: ProductsService, private route: ActivatedRoute, private categoryService: CategoryService) {
+
+    }
 
     ngOnInit(): void {
         this.route.paramMap.subscribe(params => {
@@ -44,7 +46,6 @@ export class ProductCharacteristicsPage implements OnInit {
                     this.categoryService.getId(productData.categoryId).subscribe(
                         category => {
                             this.category = category;
-                            console.log(category);
                         }
                     )
                 });

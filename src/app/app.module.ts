@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductPage } from './pages/products/product/product.component';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { HomePage } from './pages/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BannersComponent } from './components/banners/banners.component';
@@ -36,6 +36,7 @@ import { ProductReviewsPage } from './pages/products/productreviews/productrevie
 import { PersonalInfoPage } from './pages/cabinet/personalinfo/personalinfo.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { AdditionalComponent } from './components/productpage/additional/additional.component';
+import { BuyInfoComponent } from './components/productpage/buyinfo/buyinfo.component';
 
 const maskConfigFunction: () => Partial<IConfig> = () => {
   return {
@@ -46,7 +47,7 @@ const maskConfigFunction: () => Partial<IConfig> = () => {
 
 @NgModule({
   declarations: [
-    
+
     AppComponent,
     HeaderComponent,
     FooterComponent,
@@ -56,6 +57,7 @@ const maskConfigFunction: () => Partial<IConfig> = () => {
     BannersComponent,
     ProductsComponent,
     CharacteristicsComponent,
+    BuyInfoComponent,
     ProductCharacteristicsPage,
     ProductReviewsPage,
     ProductNameNavComponent,
@@ -80,10 +82,10 @@ const maskConfigFunction: () => Partial<IConfig> = () => {
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgxMaskDirective, 
+    NgxMaskDirective,
     NgxMaskPipe,
     NgxFileDropModule,
-    JwtModule.forRoot({})
+    JwtModule.forRoot({}),
   ],
   providers: [
     provideEnvironmentNgxMask(maskConfigFunction),

@@ -101,43 +101,47 @@
 
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 700px) {
+
     .good-card {
         width: 170px;
         padding: 8px;
-    }
 
-    .good-card .up .good-name {
-        font-size: 16px;
-        margin-right: 0;
-    }
+        .up {
+            .good-name {
+                font-size: 16px;
+                margin-right: 0;
+                height: 30px;
+            }
 
-    .good-card .up .good-category {
-        font-size: 14px;
-    }
+            .good-category {
+                font-size: 14px;
+            }
 
-    .good-card .wrap-img {
-        height: 150px;
-    }
+            .wrap-img {
+                height: 130px;
 
-    .good-card .up .good-img,
-    .good-card .up .good-img2 {
-        max-width: 155px;
-        max-height: 130px;
-    }
+                .good-img,
+                .good-img2 {
+                    max-width: 155px;
+                    max-height: 130px;
+                }
+            }
 
-    .good-card .up .good-cost {
-        font-size: 16px;
-    }
+            .good-cost {
+                font-size: 16px;
+            }
+        }
 
-    .good-card .down {
-        width: 170px;
-        padding: 8px;
-        margin-left: -8px;
-        margin-top: 2px;
-    }
+        .down {
+            width: 170px;
+            padding: 8px;
+            margin-left: -8px;
+            margin-top: 2px;
 
-    .good-card .down .property {
-        font-size: 12px;
+            .property {
+                font-size: 12px;
+            }
+        }
     }
 }
