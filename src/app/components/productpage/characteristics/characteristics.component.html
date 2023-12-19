@@ -1,13 +1,15 @@
 <div class="chars-section-wrap section">
     <div class="chars-section">
-        <div class="chars">
+        <app-loading *ngIf="loading">
+
+        </app-loading>
+        <div class="chars" *ngIf="!loading">
             <h2 class="title">Всі характеристики товару</h2>
             <div class="characteristic" *ngFor="let item of entries">
                 <div class="char">{{item[0]}}</div>
                 <div class="value">{{item[1]}}</div>
             </div>
         </div>
-
         <app-buyinfo [product]="product" class="app-buy-info">
 
         </app-buyinfo>

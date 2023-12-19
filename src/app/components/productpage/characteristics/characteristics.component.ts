@@ -32,9 +32,11 @@ export class CharacteristicsComponent implements OnInit {
         products: []
     };
 
+    loading = true;
 
-
-    constructor(private productsService: ProductsService, private route: ActivatedRoute, private categoryService: CategoryService) { }
+    constructor(private productsService: ProductsService, 
+        private route: ActivatedRoute, 
+        private categoryService: CategoryService) { }
 
     ngOnInit() {
         this.productsService.getAll().subscribe(products => {
@@ -66,8 +68,7 @@ export class CharacteristicsComponent implements OnInit {
             const entriesToExclude = ['amount', 'id', 'created', 'isNew', 'isDeleted', 'categoryId', 'clickCount', 'date', 'images', 'salePrice', 'category']; // Здесь перечислите свойства, которые хотите исключить
             this.entries = Object.entries(this.product).filter(([key, _]) => !entriesToExclude.includes(key))
                 .map(([key, value]) => [dictionary[key] || key, value]);
-
-            console.log(this.entries);
+            this.loading = false;
         }, 200);
     }
 }

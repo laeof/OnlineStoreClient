@@ -37,6 +37,7 @@ import { PersonalInfoPage } from './pages/cabinet/personalinfo/personalinfo.comp
 import { LoadingComponent } from './components/loading/loading.component';
 import { AdditionalComponent } from './components/productpage/additional/additional.component';
 import { BuyInfoComponent } from './components/productpage/buyinfo/buyinfo.component';
+import { ReviewsComponent } from './components/productpage/reviews/reviews.component';
 
 const maskConfigFunction: () => Partial<IConfig> = () => {
   return {
@@ -69,6 +70,7 @@ const maskConfigFunction: () => Partial<IConfig> = () => {
     CabinetComponent,
     LoadingComponent,
     AdditionalComponent,
+    ReviewsComponent,
     CartPage,
     HomePage,
     ProductPage,

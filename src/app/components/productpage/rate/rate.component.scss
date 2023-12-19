@@ -15,51 +15,49 @@
     padding-top: 20px;
     padding-bottom: 25px;
     max-height: 560px;
+
+    .stars {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 30px;
+    }
+
+    .form {
+        .input {
+            margin-bottom: 20px;
+            padding-left: 10px;
+            outline: none;
+        }
+    }
+
+    .button.gray {
+        padding: 25px;
+        width: 250px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        align-self: center;
+    }
+
+    .star {
+        fill: transparent;
+        cursor: pointer;
+    }
+
+    .star.filled {
+        fill: #E2BD2B;
+    }
 }
 
-.rate .stars {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 30px;
-}
-
-.rate .stars>* {
-    cursor: pointer;
-}
-
-.rate .form .input {
-    margin-bottom: 20px;
-    padding-left: 10px;
-    outline: none;
-}
-
-.rate .button.gray {
-    padding: 25px;
-    width: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    align-self: center;
-}
-
-.star {
-    fill: transparent;
-}
-
-.star.selected,
-.star:hover {
-    fill: #E2BD2B;
-}
-
-@media screen and (max-width: 1600px){
+@media screen and (max-width: 1600px) {
     .rate {
         width: 70%;
         margin-right: 15%;
     }
-    
+
 }
 
 @media screen and (max-width: 1366px) {
@@ -70,7 +68,9 @@
 }
 
 @media screen and (max-width: 1024px) {
-    .rate .button.gray {
-        width: 120px;
+    .rate {
+        .button.gray {
+            width: 120px;
+        }
     }
 }
